@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "筛选",
+  "usingComponents": {
+    "zan-row": "/components/dist/row/index",
+    "zan-col": "/components/dist/col/index",
+    "zan-stepper": "/components/dist/stepper/index",
+    "zan-loading": "/components/dist/loading/index"
+  }
+}

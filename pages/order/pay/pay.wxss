@@ -1,0 +1,68 @@
+/* pages/order/pages/pay/pay.wxss */
+Page{
+  background-color: rgb(248,249,251)
+}
+.time{
+  padding: 40rpx;
+  display: flex;
+}
+.time-icon{
+  font-size:150rpx;
+  color:cornflowerblue;
+}
+.clock{
+  width: 150rpx;
+  margin-top: 20rpx;
+}
+.clock image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.text{
+  font-size: 26rpx;
+  padding: 40rpx 20rpx;
+  line-height: 50rpx;
+}
+.text text{
+  color: rgb(237,112,107);
+}
+.money{
+  background-color: #fff;
+  padding: 30rpx 40rpx 30rpx 40rpx;
+  font-size: 34rpx;
+}
+.money text{
+  color: rgb(237,136,74)
+}
+.foot{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 120rpx;
+  background-color: #fff;
+  display: flex;
+}
+.left{
+  width:30%;
+  color: rgb(191,191,191);
+  font-size: 20rpx;
+  padding: 20rpx 0 20rpx 40rpx;
+}
+.left text{
+  color: rgb(237,136,74);
+  font-size: 40rpx;
+}
+.right{
+  width: 70%;
+  background-color: rgb(237,136,74);
+  text-align: center;
+  line-height: 120rpx;
+  color: #fff;
+  font-size: 32rpx
+}
+.disabled{
+  background: rgb(193,193,193);
+}
+.btn-click{
+  background: rgb(255, 185, 142);
+}

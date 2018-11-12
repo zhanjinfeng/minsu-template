@@ -1,0 +1,344 @@
+<!--pages/detail/detail.wxml-->
+<wxs module="filter" src="../../utils/filter.wxs"></wxs>
+<zan-toast id="zan-toast-test"></zan-toast>
+
+<view class='detail'>
+  <!-- 顶部图片信息 -->
+  <view class='img'>
+    <swiper class='swiper' circular bindchange="bindchange">
+      <block wx:for="{{detailList.ImageList}}" wx:key>
+        <swiper-item>
+          <image data-value="{{detailList.ImageList}}" bindtap='navigatorToPhoto' src='{{item.path}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>  
+    <view class="img-count font-middle">
+      <text class='daoke-icon icon-suolvetu'></text>
+      {{current+1}}/{{detailList.ImageList.length}}
+    </view>
+    <view class='img-share'>
+      <button open-type='share'><text class='share-icon daoke-icon icon-shangchuan'></text></button>
+      </view>
+  </view>
+  <!-- 中间详情内容 -->
+  <view class='info'>
+    <view class='info-title'>
+      <text class='font-large'>{{detailList.introduction.minsu_name}}</text>
+      <view class='info-title-service' hidden='{{level=="" && detailList.is_spacil.length==0}}' data-isShow="isShow2" bindtap='togglePopup'>
+        <text hidden='{{level==""}}' class='text2 font-middle'>\n{{level}}</text><text hidden='{{level==""}}' class='info-title-service-point font-small'>·</text>
+        <block wx:for="{{detailList.is_spacil}}" wx:key>
+          <text class='service font-small' style='color: {{item=="优选"?"#ff6b08":""}}'>{{item}}</text><text wx:if="{{index+1 != detailList.is_spacil.length}}" class='info-title-service-point font-small'>·</text><view wx:else></view>
+        </block>
+      </view>
+    </view>
+    <view class='info-youhui font-small' wx:if="{{detailList.activityType||detailList.decount_list}}">
+    <view class='activity-price' wx:if="{{ detailList.activityType == 2 }}">
+        <zan-tag plain type='danger'>今日甩卖</zan-tag><text style='margin-left: 15rpx;'>今天10:00-24:00预定，享今晚9.1折优惠</text>
+      </view>
+      <view>
+        <zan-tag plain type='danger'>连住优惠</zan-tag><text style='margin-left: 15rpx;'>满</text>
+        <block wx:for="{{detailList.decount_list}}" wx:key>
+          <text>{{ item.day }}天{{ item.discount }}折</text><text hidden='{{index+1 == detailList.decount_list.length}}'>、</text>
+        </block>
+      </view>     
+    </view>
+    <view class='info-room'>
+      <view class='info-room-left'>
+        <text class='room-icon daoke-icon icon-fangjian'></text>
+        <text class='font-middle'>\n{{detailList.bedroomCount}}室{{detailList.livingroomCount}}厅 {{detailList.bathroomCount}}卫{{detailList.kitchenCount}}厨\n</text>
+        <text class='font-small color-153'>{{detailList.addExplanation }} {{ detailList.roomArea }}平方</text>
+      </view>
+      <view class='info-room-right'>
+      <text class='room-icon daoke-icon icon-chuang'></text>
+        <text class='font-middle'>\n宜住{{detailList.recommendedGuests}}人 {{detailList.bedTypeList.length}}床\n</text> 
+        <text class='grey font-small color-153' wx:for="{{ detailList.bedTypeList }}" wx:key>{{ item }}\n</text> 
+      </view>
+    </view>
+    <!-- 评论 -->
+    <view class='info-comment'>
+      <view class='info-comment-tx'>
+        <view class='info-comment-tx-image'><image src='{{detailList.logoPicURL}}'></image></view>
+        <view>
+          <text class='font-big'>{{detailList.unitAddress}}</text>
+          <view class='info-comment-tx-label color-153 font-small'>
+            <block wx:for="{{detailList.merchant}}" wx:for-item="info_item" wx:for-index="idx" wx:key>
+              {{info_item}}<text hidden='{{idx+1 == detailList.merchant.length}}'> · </text> 
+            </block>
+          </view>
+        </view>
+      </view>
+      <!-- 房客评论 -->
+      <view class='info-comment-custom' bindtap='navigatorToDianPing' hover-class='btn-click-242'>
+        <view class='info-comment-custom-level font-middle'>
+          <zan-row>
+            <zan-col col="5" col-class="custom-zan-col"><text class='big'>{{detailList.comment.score}}</text></zan-col>
+            <zan-col col="8" col-class="custom-zan-col">
+              <view class='info-comment-custom-level-star'>
+                <view class='star'>
+                  <block>
+                    <text class='daoke-icon icon-shoucang {{detailList.comment.score>0?"active":""}} star-icon'></text>
+                    <text class='daoke-icon icon-shoucang {{detailList.comment.score>1?"active":""}} star-icon'></text>
+                    <text class='daoke-icon icon-shoucang {{detailList.comment.score>2?"active":""}} star-icon'></text>
+                    <text class='daoke-icon icon-shoucang {{detailList.comment.score>3?"active":""}} star-icon'></text>
+                    <text class='daoke-icon icon-shoucang {{detailList.comment.score>4?"active":""}} star-icon'></text>
+                  </block>
+                </view>
+                <view>{{detailList.comment.desc}}</view>
+              </view>
+            </zan-col>
+            <zan-col col="8" col-class="custom-zan-col">
+              <block wx:if="{{detailList.comment.total!=0}}">
+                <view class='info-comment-custom-level-img'>
+                  <block wx:for="{{detailList.comment.commentlist}}" wx:key>
+                    <image src='{{item.face}}'></image>
+                  </block>
+                  <view class='circle'>...</view>
+                </view>
+                <view class='info-comment-custom-middle'><text>查看全部</text><text class='org'>{{detailList.comment.total}}条</text><text>点评</text></view>
+              </block>
+              <block wx:else>
+                <text>还没有人评论哦~</text>
+              </block>
+            </zan-col>
+            <zan-col col="3" col-class="custom-zan-col">
+            <view class='info-comment-custom-middle'><text class='arrow daoke-icon icon-zhixiang'></text></view>
+            </zan-col>
+          </zan-row>
+        </view>
+        <block wx:if="{{detailList.comment.total != 0}}">
+          <view class='info-comment-custom-tx'>
+            <image src='{{detailList.comment.commentlist[0].face}}'></image>
+            <view class='info-comment-custom-tx-view font-small'>
+              <text>{{detailList.comment.commentlist[0].name}}\n</text>
+              <text>{{detailList.comment.commentlist[0].add_time}} 点评</text>      
+            </view>
+          </view>
+          <view class='info-comment-custom-comment font-middle'>
+            <text>\n{{detailList.comment.commentlist[0].content}}</text>
+          </view>
+          <view class='info-comment-custom-img'>
+            <block wx:for="{{detailList.comment.commentlist[0].imgUrls}}" wx:key>
+              <view class='comment-imgUrls'><image mode='center' src='{{item}}'></image></view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='info-map'>
+      <view class="info-map-title">
+        <text class='zan-font-bold font-big'>房屋位置</text></view>
+        <view class='info-map-title-img' bindtap='navigatorToLocation' data-lng="{{detailList.bdLng}}" data-lat="{{detailList.bdLat}}"><image src='http://api.map.baidu.com/staticimage?width=640&height=380&zoom=19&markers={{detailList.lng}},{{detailList.lat}}&markerStyles=L,A,0xff0000'></image></view>
+      <view class='info-map-path'>
+        <view><text class='map-icon daoke-icon icon-xinxinicon'></text></view>
+        <view class='info-map-path-text {{isView1?"zan-ellipsis--l3":""}} font-middle'>
+          <text>{{detailList.unitAddress}}</text>
+          <text class='color-102'>\n{{detailList.introduction.room_add}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='info-map-path-show font-middle'  hidden='{{!detailList.introduction.room_add}}'>
+      <text  data-value="isView1" bindtap='viewChange'>{{isView1=='' ? '收起': '展开全部'}}</text><view data-value="isView1" bindtap='viewChange' class='info-map-path-show-img'><text class="zhankai-icon daoke-icon {{isView2=='' ? 'icon-wangshang': 'icon-down-trangle-copy-copy'}}"></text></view>
+    </view>
+    <view class='info-houseDetail font-big'>
+      房屋详情
+      <view class='info-houseDetail-items' >
+        <view class='houseType font-small' wx:for="{{detailList.room_detail[0].tags}}" wx:key>{{item}}</view>
+      </view>
+      <view class='houseDesc {{isView2?"zan-ellipsis--l3":""}} font-middle'>
+        房屋描述
+        <view><text class='font-middle color-102'>{{detailList.introduction.room_special}}</text></view>
+      </view>
+      <view class='houseAround {{isView2?"zan-ellipsis--l3":""}} font-middle'>
+        周边介绍
+        <view><text class='font-middle color-102'>{{detailList.introduction.room_intduce}}</text></view>
+      </view>
+    </view>
+    <view class='info-map-path-show font-middle'>
+      <text data-value="isView2" bindtap='viewChange'>{{isView2=='' ? '收起': '展开全部'}}</text><view data-value="isView2" bindtap='viewChange' class='info-map-path-show-img'><text class="zhankai-icon daoke-icon {{isView2=='' ? 'icon-wangshang': 'icon-down-trangle-copy-copy'}}"></text></view>
+    </view>
+    <view class='info-service font-big'>
+      设施服务
+      <block wx:for="{{detailList.facilities}}" wx:key>
+        <view class='jcss font-middle' hidden="{{isView4}}">
+          {{item.title}}
+          <view class='items font-small color-85'>
+            <block wx:for="{{item.child}}" wx:for-item="item2" wx:key>
+              <view><text style='color: {{item2.isHave==0?"rgb(222,222,222)":"rgb(85,85,85)"}}' class='info-service-icon daoke-icon {{item2.icon}}'></text><text class='{{item2.isHave==0?"zan-text-deleted zan-c-gray":""}}'>\n{{item2.title}}</text></view>
+            </block>
+          </view>
+        </view>
+      </block>
+      <view class='items font-small' style='height: 275rpx;overflow:hidden' hidden='{{!isView4}}'>
+        <block wx:for="{{detailList.facilities[0].child}}" wx:for-item="ite" wx:key>
+          <view><text style='color: {{ite.isHave==0?"rgb(222,222,222)":"rgb(85,85,85)"}}' class='info-service-icon daoke-icon {{ite.icon}}'></text><text class='{{ite.isHave==0?"zan-text-deleted zan-c-gray":""}}'>\n{{ite.title}}</text></view>
+        </block>
+      </view>
+    </view>
+    <view class='info-map-path-show font-middle'>
+      <text  data-value="isView4" bindtap='viewChange'>{{!isView4 ? '收起': '展开全部 '+facilitiesCount+'个'}}</text><view data-value="isView4" bindtap='viewChange' class='info-map-path-show-img'><text class="zhankai-icon daoke-icon {{isView4=='' ? 'icon-wangshang': 'icon-down-trangle-copy-copy'}}"></text></view>
+    </view>
+    <view class='date'>
+      <text class='zan-font-bold font-big'>可租日期</text>
+      <view class="summary_calendar">             
+        <view class="summary_calendarmain">
+            <view class="summary_center">
+                <view class="summary_centertitle">{{date.month}}</view>       
+            </view>
+        </view>
+        <view class="calendar_number" bindtap='navigatorToCalendar'>
+            <view class="calendar_number_title">
+                <view>日</view>
+                <view>一</view>
+                <view>二</view>
+                <view>三</view>
+                <view>四</view>
+                <view>五</view>
+                <view>六</view>
+            </view>
+            <view  class="number_title">
+                <block wx:for="{{date.day}}" wx:key="date_{{item.dayIndex}}">
+                <view class="day {{item.type==0?'disabled':''}}  {{item.select==1?'ruzhu':''}} {{item.select==2?'lidian':''}} {{item.select==3?'select':''}}">
+                <view  wx:if="{{item.day2==0}}" class="text" ></view>
+                <view wx:if="{{item.day2>0 && item.select==1}}" class="text line44">{{item.day2}}<view class="p">入住</view></view>
+                <view hidden='{{item.already}}' wx:if="{{item.day2>0 && (item.select==0||item.select==3)}}" class="text {{item.already?'zan-text-deleted':''}} {{item.today==1 ? 'line44':'line88'}}">{{item.day2}}<view   data-in="{{item.dayIndex}}"  wx:if="{{item.today==1}}" class="p">今天</view></view>
+                <view wx:if="{{item.day2>0 && item.select==2}}"  class="text line44">{{item.day2}}<view class="p">离店</view></view>
+                <view  hidden='{{item.select==2}}' wx:if="{{item.already}}" class="text line44  color-153">{{item.day2}}<view class="p">无房</view></view>
+                <view class="yuan"></view>
+                <view class="{{item.select==3&&item.type==0?'':'right'}}"></view>
+                <view class="{{item.select==3&&item.type==0?'':'left'}}"></view>
+                </view>
+                </block>
+            </view>
+            <view class='changedate font-middle'>修改日期</view>
+        </view>   
+      </view>
+    </view>
+    <view class='rule'>
+      <view class='popup-rule'>
+        <view class='fangdong font-big'>交易规则<text class='font-middle color-153'>由房东定制</text></view>
+        <block wx:if="{{detailList.refundsRule}}">
+          <block wx:for="{{detailList.refundsRule}}" wx:key>
+            <view class='success font-small'>
+              <view class='point'></view>
+              <text class='color-153'>{{ item.statusTexe }}</text>
+            </view>
+            <view class='cancle font-middle'>
+              <view class='xuxian'></view>
+              <view class='qxdd'>{{item.desc}}</view>
+            </view>
+          </block>
+          <view class='ruzhu font-small'><view class='point'></view><text></text></view>
+        </block>
+        
+        <view class='rule-pay font-middle'><view class='view1'>付款方式:</view><view class='view2'>{{detailList.payType}}</view></view> 
+        <view class='rule-pay font-middle'><view class='view1'>需要确认:</view><view class='view2'>{{detailList.isComfirm}}</view></view> 
+        <view class='rule-pay font-middle'>
+          <view class='view1'>入住押金:</view>
+          <view class='color-102' wx:if="{{detailList.is_deposit== 0}}">免收</view>
+          <view wx:else class='view2 flex' data-isShow="isShow" bindtap='togglePopup'>
+            在线支付￥{{ detailList.depositMoney }}
+            <view><text class='ruzhu-icon daoke-icon icon-gantanhao'></text></view>
+          </view>
+        </view> 
+      </view>
+    </view>
+    <view class='ruzhuxuzhi font-middle'>
+      <text class='font-big'>入住须知</text>
+      <view class='xuzhi-items'>
+        <block wx:for="{{detailList.info.accomAuto}}" wx:for-item="ruzhuItem" wx:key>
+          <view class='xuzhi-item'>
+            <view><text class='daoke-icon {{ruzhuItem.isHas?"icon-dagou":"icon-dacha"}}' style='margin-right:5rpx;color:{{ruzhuItem.isHas?"rgb(53,53,53)":"rgb(193,193,193)"}}'></text></view>
+            {{ruzhuItem.title}}
+          </view>
+        </block>
+      </view>
+      <view class='shuoming'>卫生打扫: <text class='shuoming-text1'>{{detailList.info.washType.wash}}</text></view>
+      <view class='shuoming'>被单更换: <text class='shuoming-text1'>{{detailList.info.washType.clear}}</text></view>
+      <view class='shuoming'>入住退房: <text class='shuoming-text1'>入住时间{{detailList.info.accomTime}}后 | 退房时间{{detailList.info.outTime}}前</text></view>
+      <view class='shuoming'>接待时间: <text class='shuoming-text1'>{{detailList.info.recepTime.start}}~{{detailList.info.recepTime.end}}</text></view>
+      <view class='shuoming'>自助入住: <text class='shuoming-text1'>{{detailList.auto}}</text></view>
+      <view class='shuoming'>提供发票: <text class='shuoming-text1 orange' bindtap='toFaPiao' data-val="{{detailList.InvoiceUrl}}">{{detailList.Invoice}}</text></view>
+    </view>
+    <view class='cost-extend'>
+      <view class='cost-extend-head font-big'>额外费用<text class='font-small color-102'>额外费用不包括再总房费内，由房东线下收取</text></view>
+      <view class='cost-extend-other font-middle' wx:if="{{detailList.info.other!=''}}"><view class='other {{isView3?"zan-ellipsis--l2":""}} color-102'>{{detailList.info.other}}</view></view>
+    </view>
+    <view class='cost-extend-show font-middle' wx:if="{{detailList.info.other != ''}}">
+      <text data-value="isView3" bindtap='viewChange' >{{isView3=='' ? '收起': '展开全部'}}</text>
+      <text class="zhankai-icon daoke-icon {{isView3=='' ? 'icon-wangshang': 'icon-down-trangle-copy-copy'}}" data-value="isView3" bindtap='viewChange'>
+      </text> 
+    </view>
+    <view class='zhoubian font-big'>
+      周边相似房屋
+    </view>
+    <view class='zhoubianList'>
+     <scroll-view scroll-x style=" white-space: nowrap; display: flex" >
+      <block wx:for="{{detailList.NearbyRomm}}" wx:key>
+        <view class='zhoubianList-img'>
+          <view class='image'><image src='{{item.pictureURL}}'></image></view>
+          <view class='price font-middle'><text class='zan-font-12'>￥</text><text class='zan-font-20'>{{item.price}}</text></view>
+          <view class='tx'><image src='{{item.logoPicURL}}'></image></view>
+          <view class='title font-big'>{{item.unitName}}</view>
+          <view class='peopleNum font-middle color-193'><text wx:for="{{item.advantage}}" wx:for-item="itm" wx:key>{{itm}} <text hidden='{{index+1 == item.advantage.length}}'>· </text></text></view>
+        </view>
+      </block>
+      </scroll-view>
+    </view>
+    <view class='baozhang'>
+      <view class='baozhang-head'>
+        <view class='baozhang-head-text font-small'>1000万保障基金 | 到点无房额外赔偿</view>
+        <view class='baozhang-head-img font-large'><view><text class='bz-icon daoke-icon icon-bz'></text></view>有稻客 安心租</view>
+      </view>
+      <view class='bianhao'>
+        <view>——</view>
+        <view class='kongkai font-small'>房屋编号：{{detailList.unitNumber}}</view>
+        <view>——</view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部点击购买信息 -->
+  <view class='foot'>
+    <view class='foot-left'>
+      <view class='foot-phone font-small' data-phone="{{detailList.house_detail.tel}}" bindtap='markerUpPhone'>
+        <text class='daoke-icon icon-dianhua'></text>
+        <text>\n电话</text>
+      </view>
+    </view>
+    <view class='foot-right' bindtap='navigatorToCommitOrder' hover-class="btn-click">
+      <view wx:if="{{detailList.decount_list==null}}" class='foot-price font-big'>￥{{ price }}</view>
+      <view wx:else class='foot-price font-big'>
+        <view class='lianzhu-price' wx:if="{{days>=detailList.decount_list[0].day}}">
+          <view class='font-large'>￥{{ filter.toFix(price*detailList.decount_list[0].discount*0.1)}}</view>
+          <view class='lianzhu-origin font-small'>
+            ￥{{ price }}
+            <view class='lianzhu-tip font-small'>连住{{detailList.decount_list[0].day}}天{{detailList.decount_list[0].discount}}折</view>
+          </view>
+          
+        </view>
+        <text wx:else>￥{{ price }}</text>
+      </view>
+      <view class='foot-buy font-big'>立即预订</view>
+    </view>
+  </view>
+</view>
+<!-- 押金提示弹出层 -->
+<zan-popup type="bottom" show="{{isShow}}" bindclose="togglePopup">
+  <view class='popup-yajin font-middle'>
+    <view class='popup-yajin-cancle font-middle' data-isShow="isShow" bindtap='togglePopup'><text class='popup-icon daoke-icon icon-dacha'></text></view>
+    <view>1) 在线支付{{detailList.depositMoney}}元住房押金，无需到店后再支付。</view>
+    <view>2) 离店后，无设施损坏等需要赔付押金的问题，押金会原路全额退还，2-5个工作日内完成。</view>
+    <view>3) 离店后，如果有设施损坏等需要赔付押金的问题，房东会发起扣款要求，系统届时会通知您处理。</view>
+  </view>
+</zan-popup>
+<!-- 服务详情弹出层 -->
+<zan-popup type="bottom" show="{{isShow2}}" bindclose="togglePopup">
+  <view class='popup-service'>
+    <view class='popup-yajin-cancle'><text data-isShow="isShow2" bindtap='togglePopup' class='popup-icon daoke-icon icon-dacha'></text></view>
+    <block wx:for="{{popupList}}" wx:key>
+      <view class='popup-service-items' hidden='{{!item.isShow}}'>
+        <text class='item-title font-middle' style='color: {{item.title=="优选"?"#ff6b08":""}}'>{{ item.title }}\n</text>
+        <text class='font-small'>{{ item.context }}</text>
+      </view>
+    </block>
+  </view>
+</zan-popup>

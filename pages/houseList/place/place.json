@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "位置",
+  "usingComponents": {
+    "zan-tree-select": "/components/dist/tree-select/index"
+  }
+}

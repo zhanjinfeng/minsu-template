@@ -1,0 +1,28 @@
+<!--pages/profile/profile.wxml-->
+<view class='contain'>
+  <view class='header'>
+    <view class='header-tx'>
+      <open-data type="userAvatarUrl" wx:if="{{isLogin}}"></open-data>
+      <view class='unLogin-tx' wx:else><text class='tx-icon daoke-icon icon-denglu'></text></view>
+    </view>
+    <view class='header-info'>
+      <view class='info-login font-large' bindtap='toLogin' wx:if="{{!isLogin}}">登录/注册</view>
+      <view class='info-login' wx:else><open-data type="userNickName" class="userNickName"></open-data></view>
+    </view> 
+  </view>
+  <view class='menus font-middle'>
+    <view class='menus-top'>
+      <view class='menus-item' hover-class='btn-click-242' bindtap='navigatorToOrder'><text class='item-icon daoke-icon icon-dd'></text><text class='item-title'>我的订单</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+      <view class='menus-item' hover-class='btn-click-242' bindtap='toCoupon'><text class='item-icon daoke-icon icon-youhuiquan'></text><text class='item-title'>优惠券</text><text class='arrow daoke-icon icon-zhixiang'></text><text class='couponCount' wx:if="{{isLogin}}">0张</text></view>
+    </view>
+    <view class='menus-middle'>
+      <view class='menus-item' hover-class='btn-click-242' bindtap='invoiceOpen'><text class='item-icon daoke-icon icon-fapiao-'></text><text class='item-title'>发票中心</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+      <view class='menus-item' hover-class='btn-click-242' bindtap='toSuggestion'><text class='item-icon daoke-icon icon-yijianfankui'></text><text class='item-title'>意见反馈</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+      <view class='menus-item' hover-class='btn-click-242' bindtap='contact'><text class='item-icon daoke-icon icon-icon-test'></text><text class='item-title'>联系客服</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+    </view>
+    <view class='menus-bottom'>
+      <view class='menus-item' hover-class='btn-click-242' bindtap='toReceiveCoupon'><text class='item-icon daoke-icon icon-zhuanfa'></text><text class='item-title'>送红包给好友</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+    </view>
+    <view class='exit color-85' wx:if="{{isLogin}}" bindtap='exit' hover-class='btn-click-242'>退出登录</view>
+  </view>
+</view>

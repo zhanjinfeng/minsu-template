@@ -1,0 +1,31 @@
+<!--pages/order/comment/comment.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="form">
+    <view class='context'>
+      <view class='form-title'>评价内容</view>
+      <textarea name="content" auto-height placeholder='请输入内容最多500字'></textarea>
+    </view>
+    <view class="photo">
+      <view class="form-title">上传图片</view>
+      <view class='img-items'>
+        <view wx:for="{{photos_url}}" class='img-item' wx:for-index="index" wx:key>
+          <image src='{{item}}'></image>
+          <view bindtap="delele" data-index="{{index}}" class='img-delete'><text bindtap="delele" data-index="{{index}}" class='delete-icon daoke-icon icon-dacha'></text></view>
+        </view>
+        <view class='addImg-add' bindtap="upload" wx:if="{{photos_url.length<9}}"><text class='add-plus'>+</text></view>
+      </view>
+    </view>
+    <view class="radio">
+      <view class="form-title">给出评分</view>
+      <block wx:for="{{list}}" wx:key>
+        <view class='grade-title font-middle'>{{ item.title }}</view>
+        <view>
+          <slider bindchange="sliderChange" data-idx="{{index}}" step="0.5" value="5" activeColor="#FD8238" block-color="#FD8238" block-size="20" max="5" min="1"/>       
+        </view>
+        <view class='grade-items font-small'><text wx:for="{{item.grade}}" wx:for-index="idx" wx:for-item="it" class='{{idx==item.grade_index?"color-org":""}}'>{{it}}</text></view>
+      </block>
+    </view>
+    <button formType="submit" class="btn font-big" hover-class='btn-click'>确定评论</button>
+  </view>
+</form>
+

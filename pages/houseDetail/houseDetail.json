@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "房屋详情",
+  "usingComponents": {
+    "zan-col": "/components/dist/col/index",
+    "zan-icon": "/components/dist/icon/index",
+    "zan-tag": "/components/dist/tag/index",
+    "zan-popup": "/components/dist/popup/index",
+    "zan-toast": "/components/dist/toast/index"
+  }
+}

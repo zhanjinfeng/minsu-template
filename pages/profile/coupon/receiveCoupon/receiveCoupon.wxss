@@ -1,0 +1,46 @@
+/* pages/profile/coupon/receiveCoupon/receiveCoupon.wxss */
+.contain{
+
+}
+.share{
+  color:#fff;
+  text-align:center;
+  background:rgb(255,192,41);
+  border-radius:50rpx;
+  margin:20rpx 80rpx;
+  box-shadow:0 10rpx 4rpx 2rpx rgb(236,181,48)
+}
+.btn{
+  background: #fff;
+}
+.btn::after{
+  content: '';
+  width: 0;
+  height: 0;
+}
+.rule{
+  margin-top: 20rpx;
+  padding-left: 40rpx;
+  text-decoration: underline;
+}
+.popup{
+  background:#fd8238;
+  width:600rpx;
+  color:#fff;
+}
+.title{
+  padding:50rpx 0;
+  text-align:center;
+  border-bottom:3px dashed #fff;
+}
+.content{
+  padding: 50rpx;
+}
+.content view{
+  margin-bottom: 20rpx;
+}
+.close{
+  color:#fff;
+  text-align:center;
+  font-size:100rpx;
+}

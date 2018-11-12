@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择入住日期",
+  "usingComponents": {
+    "zan-button": "../../components/dist/btn/index"
+  }
+}

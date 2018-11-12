@@ -1,0 +1,11 @@
+<!--pages/order/houseCost/houseCost.wxml-->
+<view class='head'>
+  <view class='price'>￥<text>{{list.price}}</text></view>
+  <view class='title color-102'>{{list.minsu_name}}</view>
+</view>
+<view class='white' wx:if='{{list.bg_date}}'>
+  <view class='date'>{{list.bg_date}}<text>\n{{day}}</text></view>
+  <view class='count'>
+    ￥<text>{{list.price}}</text>x{{list.count}}套
+  </view>
+</view>

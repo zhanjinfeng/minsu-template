@@ -1,0 +1,36 @@
+<!--pages/profile/setPhone/setPhone.wxml-->
+<view class='text font-small'>设置手机号，可体验更多功能，下单享更多优惠。</view>
+<view class='middle'>
+  <view class='middle-left'>
+    <view class='circle'><text class='middle-icon color-org daoke-icon icon-weixindenglu'></text></view>
+    <text class='font-middle color-85'>短信登录</text>
+  </view>
+  <view class='middle-right'>
+    <view class='circle'><text class='middle-icon color-org daoke-icon icon-weixindenglu'></text></view>
+    <text class='font-middle color-85'>稻客登录</text>
+  </view>
+</view>
+<button class='getPhone' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+  <view class='set-btn'>设置为微信绑定的手机号（推荐）</view>
+</button>
+<view class='tips'>无需验证码，可直接设置</view>
+<view class='fix-text' bindtap='togglePopup'>绑定其他手机号 >></view>
+<!-- 绑定其他手机号弹出层 -->
+<zan-popup type="bottom" show="{{isShow}}">
+  <view class='close' bindtap='closePopup'>×</view>
+  <view class='codeLogin'>
+    <view class='codeLogin-view'>
+      <input type="number" bindinput='getUserPhone' placeholder='请输入手机号' placeholder-class='font-middle' maxlength="11"></input>
+    </view>
+    <view class='codeLogin-view codeLogin-code'>
+      <input bindinput='getValatedCode' placeholder='请输入图形验证码' placeholder-class='font-middle' maxlength="4"></input>
+      <image src='{{imgUrl}}?v={{sjn}}' bindtap='getImg'></image>
+    </view>
+    <view class='codeLogin-view codeLogin-code'>
+      <input type="number" bindinput='getCodeNum' placeholder='请输入验证码' placeholder-class='font-middle' maxlength="6"></input>
+      <zan-button disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode" size='code' type="org">{{time}}</zan-button>
+    </view>  
+    <view class='btn-login' style="color: {{ isFinished?'#fff':'' }}" bindtap="{{ isFinished?'login':'' }}">绑定手机号</view>
+    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为稻客民宿用户*</view>
+  </view>
+</zan-popup>

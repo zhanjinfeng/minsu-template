@@ -1,0 +1,11 @@
+/* pages/index/pages/selectNum/selectNum.wxss */
+.item{
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 2rpx solid rgb(244,244,244);
+  padding-left: 40rpx;
+}
+.item text{
+  float: right;
+  margin-right: 40rpx;
+}

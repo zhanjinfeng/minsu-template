@@ -1,0 +1,218 @@
+/* pages/search/search.wxss */
+@import "../../components/dist/index.wxss";
+Page{
+  background-color: rgb(242,243,247)
+}
+.search-nav{
+  position: fixed;
+  width: 100%;
+  height: 140rpx;
+  top: 0;
+  opacity: 1;
+  z-index: 1000;
+  background-color: #fff;
+}
+.search-nav-input{
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+.search-nav-head{
+  padding: 20rpx 30rpx 20rpx 10rpx;
+  text-align: center;
+}
+.search-nav-head-col{
+  position: relative;
+}
+.search-nav-head-col.sort{
+  padding-right: 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
+.search-nav-head-col.filter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle{
+  margin-left: 5rpx;
+  width:25rpx;
+  height:25rpx;
+  border-radius:50%;
+  border:2rpx solid rgb(255,102,102);
+  color:rgb(255,102,102);
+  line-height: 25rpx;
+  text-align: center;
+}
+.arrow{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 3px;
+  border-color: transparent rgb(20, 20, 20) rgb(20, 20, 20) transparent;
+  border-style: dashed dashed dashed solid;
+  bottom: 0;
+  right: 5rpx;
+}
+.fresh{
+  height: 140rpx;
+  background-color: rgb(242,243,247);
+  text-align: center;
+  line-height: 140rpx;
+  color: #000;
+}
+/* ----------------------------------------------------------------------------------- */
+.search-detail{
+  padding-top: 140rpx;
+  background-color: #F2F3F7
+}
+.search-detail-img{
+  position: relative;
+  width: 100%;
+  height: 500rpx;
+  
+}
+.search-detail-img-image{
+  width: 100%;
+  height: 500rpx;
+}
+.search-detail-img-price{
+  position: absolute;
+  padding: 10px 20rpx;
+  bottom: 0;
+  color: #fff;
+  background-color: rgb(41,34,28);
+  text-align: center;
+  line-height: 40rpx;
+}
+.price-top{
+  display: flex;
+}
+.price-pos{
+  position: relative;
+}
+.origin-price{
+  text-decoration: line-through;
+  margin-left:10rpx;
+  color:rgb(187,187,187);
+}
+.activity-price{
+  color: rgb(235,113,108);
+}
+.price{
+  position:absolute;
+  background:rgb(235,113,108);
+  color:#fff;
+  border-radius:50%;
+  width:100rpx;
+  font-size:26rpx;
+  text-align:center;
+  height:80rpx;
+  padding-top:15rpx;
+  z-index:100;
+  top:-78rpx;
+  left:90rpx;
+  line-height: 35rpx;
+}
+.angle{
+  position:absolute;
+  width:0;
+  height:0;
+  border-width:20rpx;
+  border-style:solid;
+  background:rgb(235,113,108);
+  border-color:#fff rgb(235,113,108) rgb(235,113,108) rgb(41,34,28);
+  top:-23rpx;
+  left:98rpx;
+}
+.shuaimai-price{
+  background:rgb(235,113,108);
+  color:#fff;
+  border-radius:50%;
+}
+.search-detail-img-tx{
+  position: absolute;
+  right: 35rpx;
+  bottom: -60rpx;
+}
+.search-detail-img-tx image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+/*--------------------------------------------------------------------  */
+.search-detail-desc{
+  padding: 40rpx;
+  background-color: #fff;
+}
+.search-detail-desc-xuzhi{
+  display: flex;
+  margin-bottom:20rpx;
+}
+.xuzhi-item{
+  border: 1px solid #e6e6e6;
+  padding: 5rpx;
+  margin-right: 20rpx;
+}
+.search-detail-desc-title{
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.search-detail-desc-title-level{
+  position: absolute;
+  padding: 0 5rpx;
+  background-color: rgb(255,128,16);
+  color: #fff;
+  width: 14%;
+  line-height: 35rpx;
+  bottom: 7rpx;
+  border-radius: 8rpx;
+}
+.omit{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.search-detail-desc-title-level image{
+  position: absolute;
+  width: 22rpx;
+  height: 22rpx;
+  top: 6rpx;
+  left: 5rpx;
+}
+.search-detail-desc-title-level text{
+  font-size: 25rpx;
+}
+.search-detail-desc-context{
+  margin: 10rpx 0 20rpx 0;
+}
+.active{
+  color: rgb(255,128,16)
+}
+.search-detail-desc-youhui{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.text{
+  flex: 0 1 auto;
+  margin-right: 30rpx;
+}
+.noData{
+  padding-top: 500rpx;
+  text-align: center;
+}
+/*  加载更多   */
+
+.noMore{
+  padding-top: 20rpx;
+  line-height: 1.6em;
+  text-align: center;
+  color: #ccc;
+  background-color: rgb(242,243,247);
+}
+

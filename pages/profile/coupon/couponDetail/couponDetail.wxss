@@ -1,0 +1,97 @@
+/* pages/profile/coupon/couponDetail/couponDetail.wxss */
+Page{
+  background-color: rgb(253,130,56)
+}
+.contain{
+  margin: 120rpx 40rpx;
+  background-color: #fff;
+}
+.contain-top{
+  position: relative;
+  display: flex;
+  padding: 40rpx;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.img{
+  position: absolute;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  background-color: rgb(253,130,56);
+  text-align: center;
+  top: -75rpx;
+  border: 4rpx solid #fff;
+}
+.img image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 20rpx;
+}
+.text{
+  margin: 60rpx 0 20rpx 0;
+}
+.money{
+  font-weight:bold;
+  font-size:70rpx;
+  color:rgb(253,130,56);
+}
+.buxian{
+  margin: 20rpx 0;
+}
+.test{
+  font-size: 34rpx;
+}
+.date{
+  margin:10rpx 0 60rpx 0;
+
+}
+.lingqu{
+  padding:20rpx 240rpx;
+  background:rgb(253,130,56);
+  color:#fff;
+  border-radius:10rpx;
+}
+.dingfang{
+  display: flex;
+  width: 100%;
+}
+.dingfang-left{
+  width: 47%;
+  text-align: center;
+  line-height: 80rpx;
+  color: rgb(253,130,56);
+  border: 2rpx solid rgb(253,130,56);
+  margin-right: 6%;
+  border-radius: 10rpx;
+}
+.dingfang-right{
+  width: 47%;
+  text-align: center;
+  line-height: 80rpx;
+  background-color: rgb(253,130,56);
+  color: #fff;
+  border-radius: 10rpx;
+}
+.contain-bottom{
+  margin: 0 40rpx;
+  padding: 40rpx 0;
+  border-top: 2rpx solid rgb(244,244,244)
+}
+.detail{
+  display: flex;
+  margin-bottom:20rpx;
+}
+.detail-text{
+  font-size: 34rpx;
+  width: 490rpx;
+}
+.detail-img{
+  line-height: 50rpx;
+}
+.detail-img image{
+  width: 25rpx;
+  height: 25rpx;
+  margin-left: 20rpx;
+}

@@ -1,0 +1,87 @@
+/* pages/index/city/city.wxss */
+@import "/components/dist/index.wxss";
+@import "../../houseList/search/search.wxss";
+.fixed-tab{
+  position: fixed;
+  width: 100%;
+  top: 90rpx;
+  background-color: #fff;
+  z-index: 100
+}
+.fixed-seach{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 15rpx 30rpx;
+  display: flex;
+  border-bottom: 2rpx solid rgb(244,244,244)
+}
+.fixed-search-input{
+  width: 90%;
+}
+.fixed-seach-text{
+  margin-left: 30rpx;
+  line-height: 60rpx;
+}
+.result{
+  margin-top: 100rpx;
+}
+.dangqian{
+  padding: 20rpx 30rpx
+}
+.dangqian-items{
+  display: flex
+}
+.dangqian-items view{
+  padding: 10rpx 20rpx;
+  background-color: rgb(247,249,251);
+  margin-right: 20rpx;
+}
+.dangqian-text{
+  margin-bottom: 20rpx;
+}
+.search-resultList{
+  position: relative;
+  padding-top: 0rpx;
+  background-color: #fff;
+  z-index:300
+}
+.city{
+  padding: 200rpx 60rpx 0 60rpx;
+  height: 1000rpx;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.title{
+  font-weight: bold;
+  font-size: 28rpx;
+  margin: 20rpx 0;
+}
+.items{
+  display: flex;
+  flex-wrap: wrap;
+}
+.item{
+  padding: 10rpx 60rpx;
+  border: 2rpx solid rgb(244,244,244);
+  font-size: 22rpx;
+}
+.allcity-item{
+  padding: 10rpx 30rpx;
+  font-size: 26rpx;
+}
+.null-result{
+  color:#FF6600;
+  font-size:28rpx;
+  text-align:center;
+  margin-top:150rpx;
+}
+.null-city{
+  margin-top: 250rpx;
+  text-align: center;
+}

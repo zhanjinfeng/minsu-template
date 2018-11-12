@@ -1,0 +1,64 @@
+<!--pages/houseDetail/commitOrder/baoxian/baoxian.wxml-->
+<view wx:if="{{!isFinshed}}">
+  <view class='form font-middle'>
+    <view class='people'>
+      <view class='left'>被保人</view>
+      <view class='right'><input placeholder='真实姓名' bindinput='name'></input></view>
+    </view>
+    <view class='zhengjian'>
+      <view class='left'>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}<view class='sanjiaoxing'></view>
+        </view>
+        </picker>
+      </view>
+      <view class='right'><input placeholder='必须真实有效并与被保人一致' bindinput='id_card'></input></view>
+    </view>
+    <view class='sex' hidden='{{index==0}}'>
+      <view class='left'>性别</view>
+      <view class='sex-right '>
+        <view class='man'>
+          <view class='square' bindtap='selectSex' data-id='man'><image hidden='{{!isSelected_man}}' src='/img/houseDetail/arrow_r.png'></image></view>
+          <text>男</text>
+        </view>
+        <view class='woman'>
+          <view class='square' bindtap='selectSex' data-id='woman'><image hidden='{{!isSelected_woman}}' src='/img/houseDetail/arrow_r.png'></image></view>
+          <text>女</text>
+        </view>
+      </view>
+    </view>
+    <view class='birthday'  hidden='{{index==0}}'>
+      <view class='left'>生日</view>
+      <view class='right'>
+        <picker mode="date" value="{{date}}" start="1900-01-01" end="2100-01-01" bindchange="bindDateChange">
+          <view class="picker2" style='{{date=="请选择您的出生日期"?"color:#999999":""}}'>
+            {{date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='confirm font-big' bindtap='submit'>确认</view>
+    <view class='prompt'>
+      <view class='image'><image src='/img/order/prompt.png'></image></view>
+      <view class='font-small color-153'><text>稻客民宿与保险公司合作推出”住宿旅客意外伤害保险，保障您在住宿期间的人身安全。保险将在入住时生效，保障时长为您在线预定的入住天数。您可以随时在房客后台查看保险状态。如果您有其他保险相关问题。请联系客服</text></view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <view class='title font-middle color-153'>最高赔付人民币11万元</view>
+  <view class='info font-middle'>
+    <view class='info-left'>
+      <view><text class='color-153'>被保人：</text>{{list.name}}</view>
+      <view><text class='color-153'>{{list.card_type}}：</text>{{list.id_card}}</view>
+    </view>
+    <view class='info-right'>
+      <view class='text'>1份</view>
+      <view class='delete font-big' bindtap='deleteBaoxian'>删除</view>
+    </view>
+  </view>
+  <view class='kongbai'></view>
+</view>
+<zan-toast id="zan-toast-test"></zan-toast>

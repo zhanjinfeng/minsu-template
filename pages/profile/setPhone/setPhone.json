@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "绑定手机号",
+  "navigationBarBackgroundColor": "#FD8238",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "zan-popup": "/components/dist/popup/index",
+    "zan-button": "/components/dist/btn/index",
+    "zan-toast": "/components/dist/toast/index"
+  }
+}

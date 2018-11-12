@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "zan-tab": "/components/dist/tab/index",
+    "zan-button": "/components/dist/btn/index",
+    "zan-loadmore": "/components/dist/loadmore/index",
+    "zan-toast": "/components/dist/toast/index"
+  }
+}

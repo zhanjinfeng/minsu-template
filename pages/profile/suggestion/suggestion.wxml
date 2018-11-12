@@ -1,0 +1,13 @@
+<!--pages/profile/suggestion/suggestion.wxml-->
+<zan-toast id="zan-toast-test"></zan-toast>
+<view class='contain font-middle'>
+  <view>您的问题或建议</view>
+  <view class='textarea'>
+    <textarea placeholder='请简要描述您在使用产品过程中的问题或建议' placeholder-class='color-153' focus bindinput='getTextarea'></textarea>
+  </view>
+  <view>您的联系方式</view>
+  <view class='email'><input placeholder='邮箱（选填）' placeholder-class='color-153'></input></view>
+  <view class='phone'><input placeholder='手机（选填）' placeholder-class='color-153'></input></view>
+  <view >请输入您的联系方式，一边我们能够方便的了解问题以及给您反馈问题结果。紧急问题可以拨打<text class='color-org' bindtap='openPhone'>{{tel}}</text>获取及时帮助</view>
+  <view class='submit {{isDisabled?"submiting":""}}' bindtap='{{isDisabled?"":"submit"}}' hover-class='btn-click'>{{isDisabled?"正在提交中":"提交建议"}}</view>
+</view>

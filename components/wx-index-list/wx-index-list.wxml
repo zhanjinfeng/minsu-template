@@ -1,0 +1,25 @@
+<wxs src="config.wxs" module="config" />
+
+<view class='list-warpper'>
+  
+  <block wx:if="{{list.length != 0 }}">
+    <scroll-view class="list-scroll {{config.search?'top':''}}" scroll-y="true" scroll-into-view="{{jumpNum}}" scroll-with-animation="{{config.animation}}">
+    <view class='list-right-wrapper'>
+      <view class='right-item' wx:for="{{rightArr}}" wx:key="rightArr" data-id="{{'index'+index}}" catchtap='jumpMt'>
+        {{rightArr[index]}}
+      </view>
+    </view>
+      <view id="{{'index'+index}}" wx:for="{{list}}" wx:key="key">
+        <view class='list-title'>{{item.title}}</view>
+        <view class='list-horizontal'>
+          <view class='list-name {{idx === 0 ?"":"border"}}' wx:for="{{item.item}}" wx:for-item="city" wx:for-index="idx" wx:key="city" data-detail="{{city}}" catchtap='detailMt'>
+            {{city.name}}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </block>
+  <block wx:else>
+    <view class='nodata'>没有搜索到相关的数据哦</view>
+  </block>
+</view>

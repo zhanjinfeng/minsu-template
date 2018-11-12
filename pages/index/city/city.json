@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "zan-tab": "/components/dist/tab/index",
+    "zan-search": "/components/dist/search/index",
+    "list-html": "/components/wx-index-list/wx-index-list"
+  }
+}

@@ -1,0 +1,57 @@
+<!--pages/order/order.wxml-->
+
+<block wx:if="{{isLogin}}">
+  <view class="tab">
+    <view class="tab-navbar"> 
+      <zan-tab
+        list="{{ list }}"
+        selected-id="{{ selectedId }}"
+        fixed="true"
+        bindtabchange="handleTabChange"
+        />
+    </view>
+  </view>
+  <view  hidden="{{orderList.length == 0}}">
+    <block wx:for="{{orderList}}" wx:key>
+      <view class='order' bindtap='navigatorToOrderDetail' data-id="{{item.orderId}}">
+        <view class='order-num font-middle'>订单号：<text>{{item.orderNumber}}</text><text class='cancle color-org font-big'>{{item.orderStatusLabel}}</text></view>
+        <view class='order-info'>
+          <view class='title font-middle'>{{item.unitName}}</view>
+          <view class='date font-middle'><text>入住：{{item.checkInDate}}</text><text>退房：{{item.checkOutDate}}</text></view>
+        </view>
+        <view class='order-cost font-middle'>
+          <view class='price'>
+            <view><text>总房费：</text><text class='font-middle color-org'>￥{{item.totalUnitAmount}}</text></view>
+            <view><text class='price-title'>订金： </text><text class='font-middle color-org'>￥{{item.preAmount}}</text></view>
+          </view>
+          <view class='cost-btn'>
+          <block wx:if="{{item.orderStatus == 8}}">
+          <view class='cancleOrder font-middle color-153' catchtap='toComment' data-id="{{item.orderId}}" hover-class='btn-click-242' wx:if="{{item.orderStatus == 8}}">评论</view>
+          </block>
+          <block wx:else>
+            <view wx:if="{{item.orderStatus != 9}}" class='cancleOrder font-middle color-153' data-id="{{item.orderId}}" data-pho="{{item.masterPhone}}" catchtap="{{item.payStatus==0?'contactOwner':'cancleOrder'}}" hover-class='btn-click-242'>{{item.payStatus==0?'联系房东':'取消'}}</view>
+            <view wx:if="{{item.orderStatus != 9}}" class='pay font-middle' data-pho="{{item.masterPhone}}" catchtap="{{item.payStatus==0?'navigatorToPay':'contactOwner'}}" data-value="{{item.orderId}}" hover-class='btn-click'>{{item.payStatus==0?'付款':'联系房东'}}</view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='loadmore' hidden="{{isHideLoadMore}}">
+      <zan-loadmore type="loading"></zan-loadmore>
+    </view>
+    <view class='noMore font-small' wx:if="{{ orderList.length == total }}">
+      这里是最后一条啦~
+    </view>
+  </view>
+  <view hidden='{{orderList.length != 0}}' class='order-null'>
+    <text class='null-icon daoke-icon icon-meiyoujieguo color-org'></text>
+    <text class='font-middle'>\n您目前尚无此类订单~</text>
+  </view>
+</block>
+<block wx:else>
+  <view class='unlogin-icon'><text class='icon-unlogin daoke-icon icon-meiyoudingdan'></text></view>
+  <view class='unlogin-tip font-middle color-85'>啊哦，您还没有登录哦！</view>
+  <view class='unlogin-btn font-big' bindtap='toLogin' hover-class='btn-click'>立即登录</view>
+</block>
+
+<zan-toast id="zan-toast-test"></zan-toast>

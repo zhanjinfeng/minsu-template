@@ -1,0 +1,47 @@
+/* pages/houseDetail/photo/photo.wxss */
+.contain{
+  padding: 40rpx;
+  background-color: rgb(240,243,246);
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.scroll-view{
+  white-space: nowrap;
+  display: flex;
+}
+.item{
+  padding: 15rpx 40rpx;
+  margin-right: 20rpx;
+  display:inline-block;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.image{
+  background-color: rgb(240,243,246);
+  padding: 160rpx 0 40rpx 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.image-item{
+ position: relative;  
+ margin-right: auto;
+ height: 300rpx;
+ margin-bottom: 40rpx;
+}
+.image-item image{
+  width: 310rpx;
+  height: 300rpx;
+}
+.text{
+  position: absolute;
+  width: 93%;
+  padding: 0 0 0 20rpx;
+  background-color: rgba(36, 30, 30, 0.123);
+  font-size: 28rpx;
+  bottom: 0;
+  left: 0;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+}

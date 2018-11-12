@@ -1,0 +1,106 @@
+/* pages/profile/setPhone/setPhone.wxss */
+Page{
+  background:rgb(242,242,242); 
+}
+.text{
+  background: rgba(253, 131, 56, 0.705);
+  color: #fff;
+  padding:10rpx 30rpx;
+}
+.middle{
+  display: flex;
+  justify-content: space-around;
+  padding:120rpx 0 40rpx 0;
+  background: #fff;
+}
+.circle{
+  width:120rpx;
+  height:120rpx;
+  border-radius:50%;
+  border:1px solid #FD8238;
+  text-align:center;
+  line-height:120rpx;
+}
+.middle-icon{
+  font-size: 70rpx;
+}
+.middle-left{
+  text-align:center;
+  line-height:100rpx;
+
+}
+.middle-right{
+  text-align:center;
+  line-height:100rpx;
+}
+.set-btn{
+  background:#fd8238;
+  padding:10rpx 0;
+  text-align:center;
+  border-radius:50rpx;
+  margin:80rpx 30rpx 20rpx 30rpx;
+  font-size:32rpx;
+  color:#fff;
+}
+.tips{
+  text-align:center;
+  font-size:28rpx;
+  color:rgb(193,193,193);
+  margin-top:30rpx;
+}
+.fix-text{
+  position:fixed;
+  bottom:50rpx;
+  left:50rpx;
+  font-size:28rpx;
+  color:rgb(55,55,55);
+}
+.getPhone{
+  background: rgb(242,242,242);
+}
+.getPhone::after{
+  content: '';
+  width: 0;
+  height: 0;
+}
+.codeLogin{
+  padding:30rpx 0 120rpx 0;
+  background: #fff;
+  width: 750rpx;
+}
+.close{
+  background:#fff;
+  font-size:70rpx;
+  color:rgb(193,193,193);
+  padding-left:8px;
+}
+.codeLogin-view{
+  height: 65rpx;
+  border-bottom: 1px solid rgb(193,193,193);
+  margin:0 60rpx 50rpx 60rpx;
+
+}
+.codeLogin-code{
+  display: flex;
+  justify-content: space-between;
+}
+.code-button{
+  width: 187rpx;
+}
+.codeLogin-view image{
+  width: 150rpx;
+  height: 60rpx;
+  margin-top: -10rpx;
+}
+.btn-login{
+  background:#fd8238;
+  text-align:center;
+  height:90rpx;
+  line-height:90rpx;
+  border-radius:50rpx;
+  color: rgba(255, 255, 255, 0.651);
+  margin:60rpx;
+}
+.accLogin-bottom{
+  text-align: center;
+}

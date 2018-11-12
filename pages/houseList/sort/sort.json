@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "排序",
+  "usingComponents": {
+    "zan-select": "/components/dist/select/index"
+  }
+}

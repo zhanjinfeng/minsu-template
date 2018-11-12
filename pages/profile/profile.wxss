@@ -1,0 +1,96 @@
+.header{
+  display: flex;
+  background:rgb(253,130,56);
+  padding:50rpx 30rpx 150rpx 30rpx;
+}
+.header-tx{
+  width:120rpx;
+  height:120rpx;
+  border-radius:50%;
+  overflow:hidden;
+  margin-right:30rpx;
+}
+.unLogin-tx{
+  background:#fff;
+  width:120rpx;
+  height:120rpx;
+  text-align:center;
+  line-height:120rpx
+}
+.userNickName{
+  font-size: 43rpx;
+  color: #fff;
+}
+.header-right{
+  width: 60%;
+  color: #fff;
+}
+.login-name{
+  height: 60rpx;
+  overflow: hidden;
+  text-overflow:  ellipsis;
+  white-space: nowrap;
+}
+.login-setPhone{
+  color:#fff;
+  font-size:26rpx;
+  background:rgba(0, 0, 0, 0.253);
+  border-radius:30rpx;
+  padding:10rpx 20rpx;
+  margin-top:5rpx;
+}
+.tx-icon{
+  font-size:50rpx;
+  color:rgb(256,138,56);
+}
+.info-login{
+  width: 480rpx;
+  color: #fff;
+  line-height: 110rpx;
+  font-size: 43rpx;
+  overflow: hidden;
+  text-overflow:  ellipsis;
+  white-space: nowrap;
+}
+.menus{
+  background:#fff;
+  margin:0 30rpx;
+  line-height:90rpx;
+  margin-top:-70rpx;
+}
+.menus-item{
+  padding: 0 40rpx;
+  border-top:1px solid rgb(248,248,248);
+}
+.menus-top{
+  box-shadow:1px 3px 6px 1px rgb(232,232,232);
+  margin-bottom:25rpx;
+
+}
+.menus-middle{
+  box-shadow:1px 3px 6px 1px rgb(232,232,232);
+  margin-bottom:25rpx;
+}
+.couponCount{
+  float: right;
+  margin: 0 10rpx 0 0;
+  line-height: 88rpx;
+}
+.menus-bottom{
+  box-shadow:1px 3px 6px 1px rgb(232,232,232);
+}
+.arrow{
+  float: right;
+  font-size: 22rpx;
+}
+.item-title{
+  margin-left: 40rpx;
+}
+.item-icon{
+  color:rgb(253,130,56);
+}
+.exit{
+  margin: 70rpx 100rpx;
+  text-align: center;
+  box-shadow:1px 3px 6px 1px rgb(232,232,232);
+}

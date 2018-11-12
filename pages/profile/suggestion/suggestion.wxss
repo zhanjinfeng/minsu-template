@@ -1,0 +1,33 @@
+/* pages/profile/suggestion/suggestion.wxss */
+.contain{
+  padding: 40rpx;
+}
+.textarea{
+  padding:20rpx;
+  border:1px solid rgb(242,242,242);
+  margin:40rpx 0;
+}
+.email{
+  border:1px solid rgb(242,242,242);
+  padding:0 10rpx;
+  margin-top:20rpx;
+}
+.phone{
+  margin:20rpx 0;
+  border:1px solid rgb(242,242,242);
+  padding:0 10rpx;
+}
+.submit{
+  text-align:center;
+  margin:20rpx 0;
+  background:rgb(253,130,56);
+  padding:20rpx;
+  border-radius:20rpx;
+  color:#fff;
+}
+.submiting{
+  background: rgb(255, 185, 142);
+}
+.btn-click{
+  background: rgb(255, 185, 142);
+}

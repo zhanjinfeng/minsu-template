@@ -1,0 +1,101 @@
+/* pages/order/comment/comment.wxss */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.form-title{
+  padding-bottom:10rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color:#000;
+}
+.context{
+  padding: 40rpx;
+  font-size: 28rpx;
+  color: rgb(191,191,191);
+  border-bottom: 20rpx solid rgb(244,244,244);
+}
+.context textarea{
+  width: 90%;
+  height: 150rpx;
+  color: #000;
+  margin:20rpx 0;
+  border:1px solid #e6e6e6;
+  padding:20rpx
+}
+.photo{
+  padding: 40rpx;
+  border-bottom: 20rpx solid rgb(244,244,244);
+}
+.img-items{
+  display: flex;
+  flex-wrap: wrap;
+}
+.img-item{
+  position: relative;
+  width: 21%;
+  height: 140rpx;
+  margin: 10px 10px 0 0;
+}
+.img-item image{
+  width: 100%;
+  height: 100%;
+}
+.img-delete{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.582);
+}
+.delete-icon{
+  color: #ccc;
+}
+.grade-title{
+  margin-top: 20rpx;
+}
+.grade-items{
+  display: flex;
+  justify-content: space-around;
+}
+.addImg{
+  margin-top: 40rpx;
+}
+.add-plus{
+  font-size:140rpx;
+  color:#fff;
+}
+.addImg-add{
+  width: 21%;
+  height: 144rpx;
+  background-color: rgb(244,244,244);
+  text-align: center;
+  line-height: 130rpx;
+  margin-top:19rpx;
+}
+.addImg-add image{
+  padding-top: 15rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+.radio{
+  padding: 40rpx;
+  border-bottom: 20rpx solid rgb(244,244,244);
+}
+.radio-items{
+  font-size:28rpx;
+  margin-top: 20rpx;
+}
+.radio-group{
+  display:flex;
+  justify-content:space-between;
+}
+.btn{
+  background:#FD8238;
+  color:#fff;
+  margin: 40rpx;
+}
+.btn-click{
+  background: rgb(255, 185, 142);
+}

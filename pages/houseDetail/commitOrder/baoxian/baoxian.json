@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "填写保险信息",
+  "usingComponents": {
+    "zan-toast": "/components/dist/toast/index"
+  }
+}

@@ -1,0 +1,37 @@
+<zan-toast id="zan-toast-test"></zan-toast>
+<view class='contain'>
+  <view class='tab'>
+    <view class="{{tabId==0?'tab-item':''}}" bindtap='changeTab'>一键授权登录</view>
+    <view class="{{tabId==1?'tab-item':''}}" bindtap='changeTab'>验证码登录</view>
+  </view>
+  <!-- 一键授权登录 -->
+  <view class='accLogin' wx:if="{{tabId==0}}">
+    <view class='accLogin-top'>
+      <button class='top-left' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <view class='left-icon'><text class='accLogin-icon daoke-icon icon-weixindenglu color-org'></text></view>
+        <text class='font-middle color-org'>授权微信登录</text>
+      </button>
+      <button class='top-right' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        <view class='right-icon'><text class='accLogin-icon daoke-icon icon-shoujidenglu1 color-org'></text></view>
+        <text class='font-middle color-org'>授权手机号登录</text>
+      </button>
+    </view>
+    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为稻客民宿用户*</view>
+  </view>
+  <!-- 验证码登录 -->
+  <view class='codeLogin font-middle' wx:else>
+    <view class='codeLogin-view'>
+      <input type="number" bindinput='getUserPhone' placeholder='请输入手机号' placeholder-class='font-middle' maxlength="11" focus></input>
+    </view>
+    <view class='codeLogin-view codeLogin-code'>
+      <input bindinput='getValatedCode' placeholder='请输入图形验证码' placeholder-class='font-middle'></input>
+      <view class='codeLogin-code-image'><image src='{{imgUrl}}&v={{sjn}}' bindtap='getImg'></image></view>
+    </view>
+    <view class='codeLogin-view codeLogin-code'>
+      <input type="number" bindinput='getCodeNum' placeholder='请输入验证码' placeholder-class='font-middle' maxlength="6"></input>
+      <zan-button disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode" size='code' type="org">{{time}}</zan-button>
+    </view>  
+    <view class='btn-login' style="color: {{ isFinished?'#fff':'' }}" bindtap="{{ isFinished?'login':'' }}" hover-class='{{ isFinished?"btn-click":""}}'>登录</view>
+    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为稻客民宿用户*</view>
+  </view>
+</view>

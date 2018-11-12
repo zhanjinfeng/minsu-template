@@ -1,0 +1,91 @@
+<!--pages/search/pages/filter/filter.wxml-->
+<view class='level font-big'>
+  房屋级别
+  <view class='level-items'>
+    <block wx:for="{{activeList.house_level}}" wx:key>
+      <view data-name="house_level" data-id="{{item.id}}" data-active="{{item.active}}" data-parm="{{item.parm}}" bindtap='activeTogg' class='level-item'>
+      <view class='level-item-img {{item.active==true ? "active" : ""}}'>
+       <text class='level-item-icon daoke-icon {{item.icon}}'></text>
+      </view>
+      <text class='font-middle {{item.active==true ? "active" : ""}}'>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<view class='recommend font-big'>
+  推荐 <text class='arrow daoke-icon icon-down-trangle-copy-copy' style='{{isArrow}}' bindtap='arrowChange'></text>
+  <view class='recommend-items' style='{{isView}}'>
+    <block wx:for="{{activeList.recommend}}" wx:key>
+      <view data-parm="{{item.title}}" data-name="recommend" data-id="{{index}}" data-active="{{item.active}}" bindtap='activeTogg' class='recommend-item {{item.active == true ? "active" : ""}} font-middle'>{{item.title}}</view>
+    </block>
+  </view>
+</view>
+<view class='houseType font-big'>
+  户型
+  <view class='houseType-items'>
+    <block wx:for="{{activeList.room_type}}" wx:key>
+      <view data-id="{{index}}" data-parm="{{item.parm}}" data-name="room_type" data-active="{{item.active}}" bindtap='activeTogg' class='houseType-item {{item.active == true ? "active" : ""}} font-middle'>{{item.title}}</view>
+    </block>
+  </view>
+</view>
+<view class='roomType font-big'>
+  房型
+  <view class='roomType-items'>
+    <block wx:for="{{activeList.house_type}}" wx:key>
+      <view data-id="{{index}}" data-parm="{{item.parm}}" data-name="house_type" data-active="{{item.active}}" bindtap='activeTogg' class='roomType-item {{item.active == true ? "active" : ""}} font-middle'>{{item.title}}</view>
+    </block>
+  </view>
+</view>
+<view class='price font-big'>
+  房价
+  <view class='sliderView'>
+  <slider class='left' block-color='white'  bindchange="leftSchange" min='{{leftMin}}' max='{{leftMax}}' value='{{leftValue}}' activeColor='rgb(243,242,247)' backgroundColor='rgb(243,242,247)' block-size='28'/>
+  <slider class='left' block-color='orange'  bindchange="leftSchange" min='{{leftMin}}' max='{{leftMax}}' value='{{leftValue}}' activeColor='rgb(243,242,247)' backgroundColor='rgb(243,242,247)' block-size='14'/>
+  <slider class='right' block-color='white' bindchange="rightSchange" min='{{rightMin}}' max='{{rightMax}}' value='{{rightValue}}' activeColor='rgb(243,242,247)' backgroundColor='rgb(243,242,247)' block-size='28'/>
+  <slider class='right' block-color='orange' bindchange="rightSchange" min='{{rightMin}}' max='{{rightMax}}' value='{{rightValue}}' activeColor='rgb(243,242,247)' backgroundColor='rgb(243,242,247)' block-size='14'/>
+  </view>
+  <view class='price-show font-small'>
+    <view class='{{leftValue==index?"color-org":""}} {{rightValue==index?"color-org":""}}' wx:for="{{priceList}}" wx:key>{{item}}</view>
+  </view>
+</view>
+<view class='mating font-big'>
+  配套 <text class='arrow daoke-icon icon-down-trangle-copy-copy' style='{{isArrow_2}}' bindtap='arrowChange2'></text>
+  <view class='mating-items' style='{{isView_2}}'>
+    <block wx:for="{{activeList.service}}" wx:key>
+      <view data-name="service" data-parm="{{item.parm}}" data-id="{{item.id}}" data-active="{{item.active}}" bindtap='activeTogg' class='mating-item'>
+      <view class='mating-item-img {{item.active==true ? "active" : ""}}'>
+       <text class="mating-item-icon daoke-icon {{item.icon}}"></text>
+      </view>
+      <text class='{{item.active==true ? "active" : ""}} font-middle'>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<view class='feature font-big'>
+  特色
+  <view class='feature-items'>
+    <block wx:for="{{activeList.feature}}" wx:key>
+      <view data-id="{{index}}" data-parm="{{item.parm}}" data-name="feature" data-active="{{item.active}}" bindtap='activeTogg' class='feature-item {{item.active == true ? "active" : ""}} font-middle'>{{item.title}}</view>
+    </block>
+  </view>
+</view>
+<view class='count font-big'>
+  入住人数
+  <view class='count-stepper'>
+    <zan-stepper
+    stepper="{{ stepper.stepper }}"
+    min="{{ stepper.min }}"
+    max="{{ stepper.max }}"
+    bind:change="handleZanStepperChange"
+    />
+  </view>
+</view>
+<view class='foot'>
+  <view bindtap='clearAll' class='foot-left font-big {{isActive?"active":""}}'>清空</view>
+  <view bindtap='confirm' class='foot-right font-big'>
+    <view style="{{result=='0套'?'background:rgb(218,218,218)':''}}" wx:if="{{isQuery}}" hover-class='btn-click'><text>确认查看({{result}})</text></view>
+    <view class='query' wx:else>
+      <view class='query-loading'><zan-loading type="circle" color="black"></zan-loading></view>
+      <text>查询中</text></view>
+  </view>
+</view>

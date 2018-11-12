@@ -1,0 +1,17 @@
+<!--pages/profile/coupon/coupon.wxml-->
+<zan-toast id="zan-toast-test"></zan-toast>
+<view class='contain'>
+  <view class='tab'>
+    <view class="{{tabId==0?'tab-item':''}}" bindtap='changeTab'>可使用</view>
+    <view class="{{tabId==1?'tab-item':''}}" bindtap='changeTab'>全部</view>
+  </view>
+  <!-- 优惠券数量不为空 -->
+  <view class='useful' wx:if="{{couponList.length != 0}}"></view>
+  <!-- 优惠券为空 -->
+  <view class='null' wx:else>
+    <text class='coupon-icon daoke-icon icon-meiyoudingdan'></text>
+    <view class='text-top font-small'>您还没有优惠券哦！</view>
+    <view class='text-btn font-middle' bindtap='toReceiveCoupon' hover-class='btn-click'>领取优惠券</view>
+  </view>
+</view>
+

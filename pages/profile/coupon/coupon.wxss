@@ -1,0 +1,52 @@
+/* pages/profile/coupon/coupon.wxss */
+.tab{
+  display:flex;
+  background:#FD8238;
+  justify-content:space-around;
+  color:#fff;
+  font-size:26rpx;
+  line-height:70rpx;
+  height:70rpx;
+}
+.tab-item{
+  position: relative;
+}
+.tab-item::after{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 4rpx;
+  width: 100%;
+  height: 5rpx;
+  background: #fff;
+}
+.useful{
+
+}
+.null{
+  padding-top: 200rpx;
+
+}
+.coupon-icon{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 250rpx;
+  color: #FD8238
+}
+.text-top{
+  text-align: center;
+  margin: 50rpx 0;
+  color: #FD8238;
+}
+.text-btn{
+  padding: 20rpx 0;
+  text-align: center;
+  background: #FD8238;
+  color: #fff;
+  border-radius:40rpx;
+  margin:0 100rpx;
+}
+.btn-click{
+  background: rgb(255, 185, 142);
+}

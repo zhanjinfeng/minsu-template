@@ -1,0 +1,30 @@
+<!--pages/profile/coupon/couponDetail/couponDetail.wxml-->
+<view class='contain font-middle'>
+  <view class='contain-top'>
+    <view class='img'><image src='/img/profile/coupon_logo.png'></image></view>
+    <view class='text'>稻客民宿</view>
+    <view class='money'>{{list.price==0?'随机立减':list.price}}<text class="font-middle" hidden='{{list.price=="0"}}'>元</text></view>
+    <view class='buxian'>{{list.rule}}</view>
+    <view class='test'>第二次产品测试</view>
+    <view class='date color-193'>有效期：{{list.bg_date}}<text hidden='{{!list.end_date}}'>-</text>{{list.end_date}}</view>
+    <view wx:if="{{!isLingqu}}" class='lingqu' bindtap='lingQu'>立即领取</view>
+    <view wx:else class='dingfang'>
+      <view class='dingfang-left'>去商城</view>
+      <view class='dingfang-right' bindtap='navigatorToIndex'>去订房</view>
+    </view>
+  </view>
+  <view class='contain-bottom'>
+    <view class='detail'>
+      <view class='detail-text'>优惠券详情</view>
+      <view class='detail-img color-193' bindtap='navigatorToDetail'>详情<image src='/img/arrow.png'></image></view>
+    </view>
+    <block wx:if="{{!isLingqu}}">
+      <view class='count color-193'>限领数量：每人仅限领取4张</view>
+      <view class='object color-193'>参与对象：全部客户</view>
+      <view class='work color-193'>适用业务：全部房型，所有商品</view>
+    </block>
+    <block wx:else>
+      <view class='work color-193'>适用业务：全部房型，所有商品</view>
+    </block>
+  </view>
+</view>

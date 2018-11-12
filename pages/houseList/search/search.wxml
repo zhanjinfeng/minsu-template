@@ -1,0 +1,58 @@
+<view class='TheSearchBox'>
+  <view class='seach'>
+    <view class='search-input'>
+      <zan-search
+          keyword="{{ inputValue }}"
+          placeholder="地标/景点/关键字"
+          bindchange="searchChange"
+          bindsearch="searchDone"
+        />
+    </view>
+  </view>
+</view>
+
+<!-- 搜索推荐 -->
+<view hidden='{{TheSearchResults !=1}}' class='search-result'>
+  <view wx:if="{{SearchHistory}}">
+    <view class='SearchHistory'>
+      <text class='zan-pull-right font-middle' bindtap="remove">清除</text>
+      <text class='zan-pull-left font-middle'>历史搜索</text>
+    </view>
+  </view>
+  <view class='tab' hidden='{{!SearchHistory}}'>
+    <block wx:for="{{SearchHistory}}" wx:key>
+      <view bindtap='navigatorToResult' class='GuessYouLike font-middle' data-itm="{{item}}"><text>{{item.name}}</text></view>
+    </block>
+  </view>
+  <!-- <view class='SearchHistory'>
+    <text class='zan-pull-left font-middle'>猜你喜欢</text>
+  </view>
+  <view class='tab'>
+    <block wx:for="{{GuessYouLike}}" wx:key>
+      <view class='GuessYouLike font-middle' data-itm="{{item}}" bindtap='navigatorToResult'><text>{{item.name}}</text></view>
+    </block>
+  </view> -->
+</view>
+
+<!-- 搜索结果 -->
+<view hidden='{{TheSearchResults == 1}}' class='search-resultList'>
+  <view wx:if="{{arrValue.length!=0}}">
+    <block wx:for="{{arrValue}}" wx:key>
+      <view class='TheSearchResults' bindtap='navigatorToResult' data-itm="{{item}}">
+        <view class='TheSearchResults-image' style='background-color: {{item.result_type.color}}'><text class='result-icon daoke-icon {{item.result_type.icon}}'></text></view>
+        <view class='TheSearchResults-text' wx:if="{{item.result_type.id=='dw'}}">
+          <view class='name font-big'><rich-text nodes="{{item.name}}"></rich-text></view>
+          <view class='other font-middle'><rich-text nodes="{{item.province}}"></rich-text>|<rich-text nodes="{{item.result_type.name}}"></rich-text></view>
+        </view>
+        <view class='TheSearchResults-text2' wx:else>
+          <view class='name2 font-big'><rich-text nodes="{{item.name}}"></rich-text></view>
+          <view class='other2 font-middle'><rich-text nodes="{{item.address}}"></rich-text><rich-text hidden='{{item.result_type.id!="fw"}}' style='margin-right:15rpx;' nodes="{{item.province}}"></rich-text>|<rich-text nodes="{{item.result_type.name}}"></rich-text></view>
+          <view class='price font-middle' wx:if="{{item.price}}">￥<text class='font-big'>{{item.price}}</text>起</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:else style='color: #FF6600;font-size: 28rpx;text-align: center;margin-top: 90rpx;'>居然没结果，换个词试试</view>
+</view>
+
+

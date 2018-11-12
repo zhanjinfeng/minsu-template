@@ -1,0 +1,27 @@
+<!--pages/profile/coupon/receiveCoupon/receiveCoupon.wxml-->
+<view class='contain'>
+  <button open-type='share' class='btn'>
+    <view class='share'>
+      <view class='white'></view>
+      送红包
+    </view>
+  </button>
+  <view class='rule font-middle' bindtap='togglePopup'>活动规则 >></view>
+</view>
+
+<!-- 弹出层 -->
+<zan-popup type="" show="{{isShow}}">
+  <view class='popup'>
+    <view class='title font-large'>活动规则</view>
+    <view class='content font-middle'>
+      <view>1、用户需要登录稻客民宿才可参与活动；</view>
+      <view>2、美味用户的邀请次数无上限，每邀请一位好友注册成功即可获得100元减免券，上不封顶；</view>
+      <view>3、邀请好友所得减免券的使用期限为领取后的3个月，且不可与线上其他优惠券同时使用；</view>
+      <view>4、获得的优惠券可在【我的】-【优惠券】中查看；</view>
+      <view>5、稻客民宿拥有对活动的最终解释权，活动过程中如果遇到任何问题，请联系客服，电话：400-888-8888</view>
+    </view>
+  </view>
+  <view class='close' bindtap='closePopup'>x</view>
+</zan-popup>
+
+

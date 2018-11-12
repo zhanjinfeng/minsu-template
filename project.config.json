@@ -1,0 +1,161 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wx569825e306a7a842",
+	"projectname": "minsu_3",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/order/order",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "订单详情",
+					"pathName": "pages/order/orderdetail/orderdetail",
+					"query": "id=113"
+				},
+				{
+					"id": 2,
+					"name": "支付订单",
+					"pathName": "pages/order/pay/pay",
+					"query": "list={\"order_id\":\"89\",\"create_time\":1540979791000,\"totalUnitAmount\":150}"
+				},
+				{
+					"id": 3,
+					"name": "房屋详情",
+					"pathName": "pages/houseDetail/houseDetail",
+					"query": "room_id=83"
+				},
+				{
+					"id": -1,
+					"name": "房屋列表",
+					"pathName": "pages/houseList/houseList",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "搜索房屋",
+					"pathName": "pages/houseList/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "房屋图片",
+					"pathName": "pages/houseDetail/photo/photo",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "房客点评",
+					"pathName": "pages/houseDetail/dianPing/dianPing",
+					"query": "id=83"
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/profile/profile",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录/注册",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "填写订单",
+					"pathName": "pages/houseDetail/commitOrder/commitOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "填写保险信息",
+					"pathName": "pages/houseDetail/commitOrder/baoxian/baoxian",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "筛选",
+					"pathName": "pages/houseList/filter/filter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择城市",
+					"pathName": "pages/index/city/city",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "会员码",
+					"pathName": "pages/profile/memberCard/memberCard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的账户",
+					"pathName": "pages/profile/account/account",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/profile/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠券详情",
+					"pathName": "pages/profile/coupon/couponDetail/couponDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "领券中心",
+					"pathName": "pages/profile/coupon/receiveCoupon/receiveCoupon",
+					"query": ""
+				},
+				{
+					"id": 19,
+					"name": "订单评价",
+					"pathName": "pages/order/comment/comment",
+					"query": "id=113"
+				}
+			]
+		}
+	}
+}

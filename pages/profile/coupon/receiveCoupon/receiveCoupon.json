@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "赚取住宿基金",
+  "navigationBarBackgroundColor": "#FD8238",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "zan-popup": "/components/dist/popup/index"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "广州",
+  "usingComponents": {
+    "zan-search": "/components/dist/search/index",
+    "zan-row": "/components/dist/row/index",
+    "zan-col": "/components/dist/col/index",
+    "zan-loadmore": "/components/dist/loadmore/index",
+    "zan-toast": "/components/dist/toast/index"
+  },
+  "backgroundColor": "#F2F3F7"
+}

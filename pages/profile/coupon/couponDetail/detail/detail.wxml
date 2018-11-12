@@ -1,0 +1,13 @@
+<!--pages/profile/coupon/couponDetail/detail/detail.wxml-->
+<view class='contain'>
+  <view class='title'>使用规则</view>
+  <view class='text'>这是使用规则</view>
+  <view class='title'>电话</view>
+  <view class='text'>13660493601</view>
+  <view class='title'>限领数量</view>
+  <view class='text'>每人仅限领取4张</view>
+  <view class='title'>参与对象</view>
+  <view class='text'>全部客户</view>
+  <view class='title'>适用业务</view>
+  <view class='text'><text>全部房型\n</text><text>所有商品</text></view>
+</view>

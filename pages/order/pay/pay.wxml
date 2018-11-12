@@ -1,0 +1,17 @@
+<!--pages/order/pages/pay/pay.wxml-->
+<view class='time'>
+  <view class='clock'><text class='time-icon daoke-icon icon-shijian'></text></view>
+  <view class='text'>
+    <view class='text1'>订单已提交，房屋将为您保留<text>{{clock}}</text></view>
+    <view class='text2'>请尽快完成付款，逾期将不会再留房</view>
+  </view>
+</view>
+<view class='money'>
+  待付金额: <text>￥{{price}}</text>
+</view>
+<view class='foot'>
+  <view class='left'>
+    <text>￥{{price}}\n</text>还需支付
+  </view>
+  <view class='right {{isDisabled?"disabled":""}}' bindtap='{{isDisabled?"":"pay"}}' hover-class='{{isDisabled?"":"btn-click"}}'>微信支付</view>
+</view>

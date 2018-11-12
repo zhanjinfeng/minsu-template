@@ -1,0 +1,35 @@
+<view
+  class="tree-select"
+  style="height: 1190rpx"
+>
+  <view class="tree-select__nav">
+    <view
+      wx:for="{{ items }}"
+      class="tree-select__nitem zan-ellipsis {{ mainActiveIndex === index ? 'tree-select__nitem--active' : '' }}"
+      data-index="{{ index }}"
+      bindtap="handleNavClick"
+      wx:key
+    >
+      {{ item.text }}
+    </view>
+  </view>
+  <view
+    class="tree-select__content"
+    style="height: 1180rpx"
+  >
+    <view
+      wx:for="{{ subItems }}"
+      wx:key="id"
+      class="tree-select__item zan-ellipsis {{ activeId === item.id ? 'tree-select__item--active' : '' }}  font-big"
+      data-item="{{ item }}"
+      bindtap="onItemSelect"
+    >
+      {{ item.name }}
+      <zan-icon
+        wx:if="{{ activeId === item.id }}"
+        type="success"
+        class="tree-select__selected"
+      ></zan-icon>
+    </view>
+  </view>
+</view>

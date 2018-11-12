@@ -1,0 +1,131 @@
+/* pages/houseDetail/commitOrder/baoxian/baoxian.wxss */
+.form{
+  padding: 0 0 0 40rpx;
+  border-top: 20rpx solid rgb(247,249,251)
+}
+.people{
+  display: flex;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.zhengjian{
+  display: flex;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-top: 2rpx solid rgb(247,249,251)
+}
+.left{
+  width: 150rpx;
+}
+.right{
+  width: 500rpx;
+  padding-top: 20rpx
+}
+.sex{
+  display: flex
+}
+.sex-right{
+  display: flex
+}
+.man{
+  display: flex;
+  margin-right: 40rpx;
+}
+.woman{
+  display: flex
+}
+.square{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 20rpx 15rpx 0 0;
+  line-height: 50rpx;
+  text-align: center;
+  border: 2rpx solid rgb(191,191,191)
+}
+.square image{
+  width: 30rpx;
+  height: 30rpx 
+}
+.picker{
+  display: flex
+}
+.sanjiaoxing{
+  margin: 40rpx 10rpx;
+  width: 0;
+  height: 0;
+  border-width: 10rpx;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+}
+.bottom{
+  padding: 30rpx 40rpx;
+  background-color: rgb(247,249,251);
+  height: 980rpx;
+}
+.confirm{
+  margin: 0rpx;
+  background-color: rgb(253,130,56);
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+}
+.prompt{
+  display: flex;
+  margin-top: 40rpx;
+}
+.image{
+  margin-right: 15rpx;
+  line-height: 20rpx;
+}
+.image image{
+  width: 15rpx;
+  height: 15rpx;
+}
+.sex{
+  height:90rpx;
+  line-height:90rpx;
+  border-top: 2rpx solid rgb(247,249,251) 
+}
+.birthday{
+  display: flex;
+  height:90rpx;
+  line-height:90rpx;
+  border-top: 2rpx solid rgb(247,249,251)  
+}
+.picker2{
+  line-height: 50rpx; 
+}
+
+
+.title{
+  padding: 0 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: rgb(247,249,251)
+}
+.info{
+  padding: 20rpx 30rpx;
+  display: flex;
+}
+.info-left{
+  line-height: 50rpx;
+  width: 540rpx;
+  
+}
+.info-right{
+  line-height: 50rpx;
+}
+.text{
+  text-align: right
+}
+.delete{
+  padding: 5rpx 40rpx;
+  color: rgb(253,130,56);
+  border: 2rpx solid rgb(253,130,56)
+}
+
+.kongbai{
+  height: 960rpx;
+  background-color: rgb(247,249,251)
+}

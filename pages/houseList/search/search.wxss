@@ -1,0 +1,108 @@
+@import "/components/dist/index.wxss";
+.search-result{
+  padding-top: 100rpx;
+}
+.tab{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 30rpx;
+  width: 90%;
+}
+.tab view{
+  padding: 10rpx 20rpx;
+  background-color: rgb(247,249,251);
+  margin: 0 20rpx 20rpx 0;
+}
+.SearchHistory{
+  color:#999; 
+  padding: 0 30rpx;
+  margin: 25rpx 0;
+}
+.search-resultList{
+  padding-top: 90rpx;
+}
+.TheSearchResults{
+  position: relative;
+  display: flex;
+  padding: 20rpx 40rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  border-bottom: 2rpx solid rgb(244,244,244)
+}
+.TheSearchResults-image{
+  display: flex;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+  justify-content:center;
+  line-height:40rpx;
+}
+.TheSearchResults-image image{
+  width: 20rpx;
+  height: 20rpx;
+  margin: 6rpx;
+}
+.TheSearchResults-text{
+  display: flex;
+}
+.name{
+  margin-right: 40rpx;
+  line-height: 50rpx;
+}
+.other{
+  display: flex;
+  line-height: 50rpx;
+  text-align: center;
+  color: rgb(191,191,191)
+}
+.other rich-text{
+  margin-left: 10rpx
+}
+.other rich-text:first-child{
+  margin: 0 10rpx 0 0
+}
+.name2{
+  margin-right: 40rpx;
+  line-height: 50rpx;
+}
+.other2{
+  display: flex;
+  line-height: 50rpx;
+  text-align: center;
+  color: rgb(191,191,191)
+}
+.other2 rich-text{
+  margin-left: 10rpx
+}
+.other2 rich-text:first-child{
+  margin: 0 10rpx 0 0
+}
+.price{
+  position: absolute;
+  right: 40rpx;
+  bottom: 50rpx;
+  color: rgb(253,130,56)
+}
+
+/*自定义搜索框*/
+.seach{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10rpx 30rpx;
+  display: flex;
+  border-bottom: 2rpx solid rgb(244,244,244);
+  height: 70rpx;
+}
+.search-input{
+  width: 90%;
+}
+.seach text{
+  margin: 10rpx 0 0 20rpx;
+}
+.result-icon{
+  font-size:22rpx;
+  color:#fff;
+}

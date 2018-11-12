@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/profile/profile",
+    "pages/login/login",
+    "pages/houseDetail/houseDetail",
+    "pages/houseDetail/commitOrder/commitOrder",
+    "pages/houseDetail/commitOrder/baoxian/baoxian",
+    "pages/houseList/houseList",
+    "pages/houseList/filter/filter",
+    "pages/houseList/place/place",
+    "pages/houseList/sort/sort",
+    "pages/houseList/search/search",
+    "common/calendar/calendar",
+    "pages/index/selectNum/selectNum",
+    "pages/index/city/city",
+    "pages/order/orderdetail/orderdetail",
+    "pages/order/pay/pay",
+    "pages/order/comment/comment",
+    "pages/order/houseCost/houseCost",
+    "pages/houseDetail/faPiao/faPiao",
+    "pages/houseDetail/dianPing/dianPing",
+    "pages/houseDetail/photo/photo",
+    "pages/profile/setPhone/setPhone",
+    "pages/profile/coupon/coupon",
+    "pages/profile/suggestion/suggestion",
+    "pages/profile/coupon/receiveCoupon/receiveCoupon",
+    "pages/profile/coupon/couponDetail/couponDetail",
+    "pages/profile/coupon/couponDetail/detail/detail"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/index/index.png",
+        "selectedIconPath": "img/index/index2.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "img/index/order.png",
+        "selectedIconPath": "img/index/order2.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "img/index/profile.png",
+        "selectedIconPath": "img/index/profile2.png"
+      }
+    ],
+    "selectedColor": "#FD8238"
+  }
+}

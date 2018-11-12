@@ -1,0 +1,8 @@
+<!--pages/search/pages/place/place.wxml-->
+<zan-tree-select
+  items="{{ items }}"
+  main-active-index="{{ mainActiveIndex }}"
+  active-id="{{ activeId }}"
+  bind:navclick="handleNavClick"
+  bind:itemclick="handleItemClick"
+/>

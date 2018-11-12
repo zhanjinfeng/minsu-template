@@ -1,0 +1,77 @@
+<!--pages/order/pages/orderdetail/orderdetail.wxml-->
+<view class='zhifu' wx:if='{{order.payStatus == 0}}'>
+  <view class='zhifu-text'>
+    距离订单关闭还剩
+    <view><text class='daoke-icon icon-naozhong'></text></view><text>{{clock}}</text>
+  </view>
+  <view class='topay {{isDisabled?"topay-active":""}}' bindtap='{{isDisabled?"":"navigatorToPay"}}' hover-class='btn-click'>去付款</view>
+</view>
+<view class='kongbai' hidden='{{order.payStatus != 0}}'></view>
+<view class='head'>
+  <text class='ordernum'>订单号： {{order.orderNumber}}</text>
+  <text class='active' style='color: {{order.orderStatusLabel != "已取消"?"rgb(255,102,102)":""}}'>{{order.orderStatusLabel}}</text>
+  <text class='orderstate'>状态： </text>
+</view>
+<view class='info'>
+  <view class='info-title font-big'>{{order.unitName}} {{order.bookingCount}}套</view>
+  <view class='info-date'><text>入住：{{order.checkInDate}}</text><text>退房：{{order.checkOutDate}}</text></view>
+  <view class='info-alert' bindtap='togglePopup' wx:if="{{order.defund}}">{{order.outTime}} 后取消或变更订单将产生违约金<text class='alert-icon daoke-icon icon-bofang'></text></view>
+  <view class='info-cost'>总房费： ￥{{order.total_price}}<text bindtap='navigatorTohouseCost'>房费明细</text></view>
+</view>
+<view class='detail'>
+  <view class='detail-cost'>
+    <view class='all'>全额房费：<text>￥{{order.total_price}}</text></view>
+    <view class='yajin' wx:if="{{order.is_deposit==1}}">住房押金：<text>￥{{order.depositMoney}}</text></view>
+    <view class='daifu'>待付金额：<text>￥{{order.total_price}}</text></view>
+  </view>
+</view>
+<view class='house'>
+  房屋信息
+  <view class='house-title' bindtap='navigatorTohouseDetail'>
+    <view class='info-text'>{{order.unitName}}</view>
+    <text class='arrow-icon daoke-icon icon-zhixiang'></text>
+  </view>
+  <view class='house-address' bindtap='openLocation'>
+    <view class='info-text'>地址：{{order.unitAddress}}</view>
+    <text class='arrow-icon daoke-icon icon-zhixiang'></text>
+  </view>
+</view>
+<view class='peopleinfo'>
+  入住人信息
+  <view class='name'>姓名：{{order.bookerName}}</view>
+  <view class='phone'>手机：{{order.phone}}</view>
+</view>
+<view class='prompt'>
+  <text class='prompt-icon daoke-icon icon-shoucang color-org'></text>温馨提示:
+  <view class=''>需{{order.accomTime}}办理入住，早到可能需要等待。</view>
+  <view class=''>需{{order.outTime}}之前办理退房，如需延迟退房请与商户协商。</view>
+  <view class=''>未到店或未入住时，请勿轻易线下转账方式支付押金或其他费用，以免上当受骗！</view>
+</view>
+<view class='foot font-middle' hidden='{{order.orderStatusLabel == "待支付" && 1}}'>
+  <view class='delete' bindtap='deleteOrder'>删除</view>
+  <view class='yuding' bindtap='navigatorTohouseDetail'>再次预定</view>
+</view>
+<zan-popup type="bottom" show="{{ isShow }}" bindclose="togglePopup">
+  <view class='popup'>
+    <view class='popup-head'>交易规则<text class='popup-icon daoke-icon icon-iconfont31guanbi' bindtap='togglePopup'></text></view>
+    <view class='popup-rule'>
+      <block wx:if="{{order.refundsRule}}">
+          <view class='fangdong font-big'>交易规则<text class='font-middle color-153'>由房东定制</text></view>
+          <block wx:for="{{order.refundsRule}}">
+            <view class='success font-small'>
+              <view class='point'></view>
+              <text class='color-153'>{{ item.statusTexe }}</text>
+            </view>
+            <view class='cancle font-middle'>
+              <view class='xuxian'></view>
+              <view class='qxdd'>{{item.desc}}</view>
+            </view>
+          </block>
+        </block>
+    </view>
+  </view>
+  <view class='wxts'>
+  <text class='wxts-text1'>温馨提示\n\n</text>
+  <text class='wxts-text2'>订单的取消时间一系统中记录的取消订单时间为准;\n额外费用和押金不包括再房费内;\n若您对退订规则还有其他疑问，可前往客服中心获取更多帮助。</text>
+  </view>
+</zan-popup>

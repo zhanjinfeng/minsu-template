@@ -1,0 +1,74 @@
+<!--index.wxml-->
+<view class='flex'>
+  <!-- 顶部图片信息 -->
+  <view class='img'>
+    <swiper class='swiper' autoplay interval="5000" circular>
+      <block wx:for="{{bannerList}}" wx:key>
+        <swiper-item>
+          <image data-value="{{bannerList}}" src='{{item}}' class='swiper-img'></image>
+        </swiper-item>
+      </block>
+    </swiper>  
+  </view>
+  <!-- 中间表单 -->
+  <view class='flex-form'>
+    <view class='search-place'>
+      <view class='place1 font-big' bindtap='navigatorToCity'>{{cityInfo.city_name}}<text hidden='{{place==""}}'>·{{place}}</text></view>
+      <view hidden='{{!isHide}}' class='place2 font-middle' bindtap='getLocation'>
+        <text class='daoke-icon icon-dingwei1'></text>
+        <view class='font-small'>我的位置</view>
+      </view>
+      <view hidden='{{isHide}}' class='dingwei'><text class='font-small'>定位中...</text></view>
+    </view>
+    <view class='search-date'>
+      <navigator url='../../common/calendar/calendar?bg_date={{bg_date}}&end_date={{end_date}}' hover-class='none'>
+        <zan-row>
+          <zan-col col="9" col-class="custom-zan-col"><view class='bg_date'>{{bg_date}}<text class='font-small'>入住</text></view></zan-col>
+          <zan-col col="6" col-class="custom-zan-col"><view class='total font-small'>共{{days}}晚</view></zan-col>
+          <zan-col col="9" col-class="custom-zan-col"><view class='end_date'>{{end_date}}<text class='font-small'>离店</text></view></zan-col>
+        </zan-row>
+      </navigator>
+    </view>
+    <view class='search-num'>
+      <navigator url='selectNum/selectNum?num={{peopleNum}}' hover-class='none'>
+        <zan-row>
+          <zan-col col="22" col-class="custom-zan-col"><view class='num1 font-big'>{{peopleNum}}</view></zan-col>
+          <zan-col col="2" col-class="custom-zan-col"><view class='num2'><text class='daoke-icon icon-zhixiang'></text></view></zan-col>
+        </zan-row>
+      </navigator>
+    </view>
+    <view class='search-btn font-big' hover-class='btn-click' bindtap='search'>查找美屋</view>
+  </view>
+  <!-- 今日推荐 -->
+  <view class='recommend'>
+    <view class='recommend-title'>
+      <text class='font-big'>今日推荐</text><text class='recommend-length font-middle'>/{{recommendList.length}}</text><text class='curr-count font-big'>{{current+1}}</text>
+    </view>
+    <!-- 图片信息 -->
+    <view class='recommend-img'>
+      <swiper class='recommend-swiper' circular bindchange="bindchange">
+        <block wx:for="{{recommendList}}" wx:key>
+          <swiper-item>
+            <image class='swiper-img' data-path="{{item.location}}" bindtap='navigatorToPhoto' src='{{item.imageURL}}'></image>
+            <view class='img-title font-big'>{{item.title}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 底部活动 -->
+  <view class='activity'>
+    <view class='activity-items' bindtap='toActivity' hover-class='btn-click-242' >
+      <view class='item-top font-big'>民宿免费住</view>
+      <view class='item-bottom font-small color-85'>百分百有奖</view>
+    </view>
+    <view class='activity-items' bindtap='toActivity' hover-class='btn-click-242'>
+      <view class='item-top font-big'>拼团抽惊喜</view>
+      <view class='item-bottom font-small color-85'>一人中全团奖</view>
+    </view>
+    <view class='activity-items' bindtap='toActivity' hover-class='btn-click-242'>
+      <view class='item-top font-big'>超能大礼包</view>
+      <view class='item-bottom font-small color-85'>￥250人人领</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,69 @@
+/* pages/houseDetail/dianPing/dianPing.wxss */
+.comment{
+  padding: 40rpx;
+}
+.comment-head{
+  background-color: rgb(247,249,250);
+  padding: 40rpx;
+  display: flex;
+}
+.head-left{
+  width: 40%;
+}
+.left-star text{
+  font-size: 20rpx;
+}
+.head-center{
+  width: 34%;
+  line-height:40rpx;
+  padding-top:10rpx;
+}
+.head-right{
+  width: 33%;
+  line-height:40rpx;
+  padding-top:10rpx;
+}
+.comment-head text{
+  color: rgb(253,130,56)
+}
+.custom{
+  padding: 20rpx 0;
+}
+.items{
+  padding: 40rpx 0;
+  border-bottom: 2rpx solid rgb(244,244,244)
+}
+.custom-tx{
+  display: flex;
+}
+.custom-star{
+  margin-top:20rpx;
+}
+.custom-star text{
+  font-size: 21rpx;
+}
+.custom-img{
+  padding: 20rpx 0;
+}
+.custom-img image{
+  width: 22%;
+  height: 170rpx;
+  margin-right: 15rpx; 
+}
+.custom-tx image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.reply{
+  padding:20rpx;
+  background:rgb(250, 249, 249);
+}
+.null{
+  padding-top: 150rpx;
+  text-align: center;
+}
+.color-153 {
+  color: rgb(153,153,153)
+}

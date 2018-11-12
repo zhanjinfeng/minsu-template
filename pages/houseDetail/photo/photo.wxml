@@ -1,0 +1,16 @@
+<!--pages/houseDetail/photo/photo.wxml-->
+<view class='contain'>
+  <scroll-view scroll-x class='scroll-view'>
+    <block wx:for="{{photoList}}" wx:key>
+      <view class='item' data-title="{{item.title}}" data-id="{{item.id}}" style='background-color: {{index == selectedId?"#ff6b08":""}};color: {{index == selectedId?"#fff":""}}' bindtap='changeSelect'>{{item.title}}</view>
+    </block>
+  </scroll-view> 
+</view>
+<view class='image'>
+  <block wx:for="{{imgUrlsList}}" wx:key>
+    <view class='image-item' bindtap='prevImg'>
+      <image src='{{item.path}}'></image>
+      <view class='text'>{{item.images_name}}</view>
+    </view>
+  </block>
+</view>

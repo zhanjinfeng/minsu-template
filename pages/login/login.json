@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "登录",
+  "navigationBarBackgroundColor": "#FD8238",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "zan-icon": "/components/dist/icon/index",
+    "zan-button": "/components/dist/btn/index",
+    "zan-row": "/components/dist/row/index",
+    "zan-col": "/components/dist/col/index",
+    "zan-tag": "/components/dist/tag/index",
+    "zan-toast": "/components/dist/toast/index"
+  }
+}

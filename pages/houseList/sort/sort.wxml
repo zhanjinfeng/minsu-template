@@ -1,0 +1,7 @@
+<!--pages/search/pages/sort/sort.wxml-->
+<zan-select
+  items="{{ items }}"
+  checkedValue="{{ checkedValue }}"
+  activeColor="{{ activeColor }}"
+  bind:change="handleSelectChange"
+/>

@@ -1,0 +1,100 @@
+<!--pages/houseDetail/commitOrder/commitOrder.wxml-->
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+<view class='image font-middle' style='background-image: url({{dataList.imgUrl}})'>{{dataList.title}}</view>
+<view class='info'>
+  <view class='info-title font-big color-153'>{{dataList.title}}</view>
+  <view class='info-date font-middle'>
+    <text>入住：{{dataList.bg_date}}</text><text class='lidian'>离店：{{dataList.end_date}}</text><text class='color-153'>共{{days}}晚</text>
+  </view>
+</view>
+<!-- djskfhsdkf -->
+<form report-submit="true" bindsubmit="formSubmit">
+<view class='form font-middle'> 
+    <view class='housenum'>
+      <view class='housenum-text'><text>房屋数量</text></view>
+      <stepper
+        stepper="{{ stepper.stepper }}"
+        min="{{ stepper.min }}"
+        max="{{ stepper.max }}"
+        dw="套"
+        bind:change="handleZanStepperChange"
+      >
+    </stepper>
+    </view>
+    <view class='peoplenum'>
+      <view class='housenum-text'><text>入住人数</text></view>
+      <stepper
+        stepper="{{ stepper2.stepper }}"
+        min="{{ stepper2.min }}"
+        max="{{ stepper2.max }}"
+        bind:change="handleZanStepperChange2"
+      >
+    </stepper>
+    </view>
+    <view class='zhengjian'>
+      <view class='zhengjian-left'><text>入住人</text></view>
+      <input placeholder='姓名' bindinput='getName'></input>
+    </view>
+    <view class='zhengjian'>
+      <view class='zhengjian-left'><text>手机号</text></view>
+      <input placeholder='用于接收通知' value='{{phone}}' bindinput='getPhone'></input>
+    </view>
+    <view class='zhengjian'>
+      <view class='zhengjian-left'>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}<view class='sanjiaoxing'></view>
+        </view>
+        </picker>
+      </view>
+      <input placeholder='证件号码' bindinput='getIdCard'></input>
+    </view>
+    <view class='xuzhi' hidden='{{index!=2}}' bindtap='togglePopup'>
+      <view><text class='xuzhi-icon daoke-icon icon-gantanhao'></text></view>
+      <text>住宿登记须知</text>
+    </view>
+</view>
+<view class='baoxian' bindtap='navigatorToBaoxian'>
+  <view class='baoxian-left'>
+    <view class='font-middle'>住宿意外保险（免费赠送）</view>
+    <view class='font-small color-153'>最高赔付人名币11万元</view>
+  </view>
+  <view class='baoxian-right font-small'>{{baoxian}}<text class='baoxian-icon daoke-icon icon-zhixiang'></text></view>
+</view>
+<view class='totalcost font-middle color-153'>
+  <text>总房费：</text><text class='price'>￥{{filter.toFix(price*stepper.stepper)}}</text>
+  <view bindtap='navigatorToHouseCost' data-price="{{filter.toFix(price*stepper.stepper)}}"><text class='cost color-org'>房费明细</text></view>
+</view>
+<view class='pay font-middle'>
+  <view class='pay-daifu'>
+    <text>待付金额：</text>
+    <text class='right font-big color-org'>￥{{dataList.is_deposit==1?filter.toFix(price*stepper.stepper+filter.parseToInt(dataList.depositMoney)):filter.toFix(price*stepper.stepper)}}</text>
+  </view>
+  <view class='pay-yajin' wx:if="{{dataList.is_deposit !=0 }}">
+    <text class='color-153'>住房押金：</text><text class='right '>￥{{dataList.depositMoney}}</text>
+  </view>
+</view>
+<view class='other'>
+  <block wx:for="{{otherList}}" wx:key>
+    <view class='item font-small'>
+      <view><text class='prompt-icon daoke-icon icon-shoucang color-org'></text></view>
+      <view class='color-153'><text>{{item}}</text></view>
+    </view>
+  </block>
+</view>
+<view class='foot'>
+  <view class='foot-left'>
+    <view class='font-large color-org'>￥{{dataList.is_deposit==1?filter.toFix(price*stepper.stepper+filter.parseToInt(dataList.depositMoney)):filter.toFix(price*stepper.stepper)}}</view>
+    <view class='font-small color-153'>待付金额</view>
+  </view>
+  <button formType="submit" class='foot-right font-big {{isDisabled?"active":""}}' disabled='{{isDisabled}}' hover-class='btn-click'>{{isDisabled?"正在提交中":"提交订单"}}</button>
+</view>
+</form>
+<!-- fdgdgfg -->
+<zan-popup show="{{ isShow }}" bindclose="togglePopup">
+  <view class='popup font-middle color-102'>
+    <text decode space='emsp'>住宿登记法律义务：\n  根据我国法律规定，外国人、港澳台居民应当在抵达住宿地后24小时内办理住宿登记。住宿宾馆的，请在宾馆内办理，住宿宾馆以外地区的，请前往当地派出所办理。未依法办理住宿登记将承担法律责任。</text>
+    <view class='popup-confirm' bindtap='togglePopup'>确定</view>
+  </view>
+</zan-popup>
+<zan-toast id="zan-toast-test"></zan-toast>

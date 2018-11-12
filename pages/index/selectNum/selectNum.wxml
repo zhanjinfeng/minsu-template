@@ -1,0 +1,9 @@
+<!--pages/index/pages/selectNum/selectNum.wxml-->
+<view class='select'>
+  <block wx:for="{{items}}" wx:key>
+    <view class='item font-middle' data-num="{{item.name}}" data-value="{{item.value}}" bindtap='handleSelectChange'>
+      {{item.name}}
+      <text class='color-org daoke-icon {{item.value == selectValue?"icon-dagou1":""}}'></text>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,56 @@
+<!--pages/houseDetail/dianPing/dianPing.wxml-->
+<view class='comment'>
+  <view class='comment-head font-small'>
+    <view class='head-left'>
+      <view><text>{{commentsList.grade}}分</text></view>
+      <view class='left-star'>
+        <text class='daoke-icon icon-shoucang {{grade>0?"":"color-153"}} star-icon'></text>
+        <text class='daoke-icon icon-shoucang {{grade>1?"":"color-153"}} star-icon'></text>
+        <text class='daoke-icon icon-shoucang {{grade>2?"":"color-153"}} star-icon'></text>
+        <text class='daoke-icon icon-shoucang {{grade>3?"":"color-153"}} star-icon'></text>
+        <text class='daoke-icon icon-shoucang {{grade>4?"":"color-153"}} star-icon'></text>        
+      </view>
+      <view>{{commentsList.total}}条点评</view>
+    </view>
+    <view class='head-center'>
+      <view>卫生环境：<text>{{commentsList.health}}分</text></view>
+      <view>房东服务：<text>{{commentsList.service}}分</text></view>
+    </view>
+    <view class='head-right'>
+      <view>交通位置：<text>{{commentsList.address}}分</text></view>
+      <view>室内装修：<text>{{commentsList.decoration}}分</text></view>
+    </view>
+  </view>
+  <view class='custom' wx:if="{{commentsList.commentList.length!=0}}">
+    <block wx:for="{{commentsList.commentList}}">
+      <view class='items'>
+        <view class='custom-tx'>
+            <image src='{{item.face}}'></image>
+            <view class='custom-tx-view font-small'>
+              <text>{{item.name}}\n</text>
+              <text class='color-153'>{{item.add_time}} 点评</text>      
+            </view>   
+        </view>
+        <view class='custom-star font-middle color-org'>{{item.grade}}分
+          <text class='daoke-icon icon-shoucang {{item.grade>0?"":"color-153"}} star-icon'></text>
+          <text class='daoke-icon icon-shoucang {{item.grade>1?"":"color-153"}} star-icon'></text>
+          <text class='daoke-icon icon-shoucang {{item.grade>2?"":"color-153"}} star-icon'></text>
+          <text class='daoke-icon icon-shoucang {{item.grade>3?"":"color-153"}} star-icon'></text>
+          <text class='daoke-icon icon-shoucang {{item.grade>4?"":"color-153"}} star-icon'></text>        
+      </view>
+        <view class='custom-comment font-middle'>
+          <text>\n{{item.content}}</text>
+        </view>
+        <view class='custom-img' wx:if="{{item.imgUrls}}">
+          <block wx:for="{{item.imgUrls}}" wx:for-item="item2">
+            <image mode='center' src='{{item2}}' bindtap='prevImage' data-value="{{item2}}" data-imgurls="{{item.imgUrls}}"></image>
+          </block>
+        </view>
+        <view class='font-small reply' wx:if="{{item.reply}}">
+          <text class='color-org'>房东回复：</text>{{item.reply}}
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='null font-middle color-153' wx:else>暂时还没有评论哦~</view>
+</view>

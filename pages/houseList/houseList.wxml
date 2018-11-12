@@ -1,0 +1,110 @@
+<!--pages/search/search.wxml-->
+
+<view class='search'>
+  <!-- 搜索栏 -->
+  <view class='search-nav'>
+    <view class='search-nav-input'>
+      <navigator hover-class='none' url='search/search?title={{inputValue}}'>
+        <zan-search
+          keyword="{{ inputValue }}"
+          placeholder="地标/景点/关键字"
+          disabled
+        />
+      </navigator>
+    </view>
+    <view class='search-nav-head'>
+      <zan-row>
+        <zan-col col="6" col-class="custom-zan-col">
+          <navigator url='/common/calendar/calendar?bg_date={{bg_date}}&end_date={{end_date}}' hover-class='none'>
+            <view class='search-nav-head-col sort font-middle'>{{starttime}}-{{endtime}}<view class='arrow'></view>
+            </view>
+          </navigator>
+        </zan-col>
+        <zan-col col="6" col-class="custom-zan-col">
+          <view class='search-nav-head-col sort font-middle' bindtap='toPlace'>{{place.title}}<view class='arrow'></view>
+          </view>
+        </zan-col>
+        <zan-col col="6" col-class="custom-zan-col">
+          <view class='search-nav-head-col sort font-middle' bindtap='toSort'>{{sort[sort_value].name}}
+            <view class='arrow'></view>
+          </view>
+        </zan-col>
+        <zan-col col="6" col-class="custom-zan-col">
+          <navigator hover-class='none' url='filter/filter'>
+            <view class='search-nav-head-col font-middle filter'>{{filter[0].title}}<view class='circle font-small' hidden='{{filter_num==""}}'>{{filter_num > 9 ? '9+' : filter_num}}</view><view class='arrow'></view>
+            </view>
+          </navigator>
+        </zan-col>
+      </zan-row>
+    </view>
+  </view>
+  <!-- 房屋数据 -->
+  <view class='search-detail' wx:if="{{houseList.length!=0}}">
+    <block wx:for="{{houseList}}" wx:key>
+      <view bindtap='navigatorToHouseDetail' data-id="{{item.room_id}}" hover-class='btn-click-242'>
+        <view class='search-detail-img'>
+          <image class='search-detail-img-image' src='{{item.pictureURL}}'></image>
+          <view class='search-detail-img-price'>
+            <view class="price-top">
+              <text class='font-small'>￥</text>
+              <view class='price-pos font-large'>
+                <!-- 活动价 -->
+                <block wx:if="{{ item.activityType }}">
+                  {{ item.activityPrice }}
+                </block>
+                <!-- 原价 -->
+                <block wx:else>
+                  {{ item.price }}
+                </block>
+                <!-- 活动类型2: 甩卖 -->
+                <view class="price" wx:if="{{ item.activityType == 2 }}">今日<text>\n</text>甩卖</view>
+                <view class='angle' wx:if="{{ item.activityType == 2 }}"></view>
+              </view>
+              <!--  -->
+              <text class='origin-price font-middle' wx:if="{{ item.activityType }}">￥{{ item.price }}</text>
+            </view>
+            <!-- 活动为1：促销 -->
+            <view class='price-bottom' wx:if="{{ item.activityType == 1 }}">
+              <text class='activity-price font-middle'>促销已减{{ item.sale_worke_price-item.activityPrice }}</text>
+            </view>
+          </view>
+          <view class='search-detail-img-tx'><image src='{{item.logoPicURL}}'></image></view>
+        </view>
+        <view class='search-detail-desc'>
+          <view class='search-detail-desc-xuzhi font-small'>
+            <view wx:for="{{item.rules}}" wx:key wx:for-item="itm" class='xuzhi-item zan-c-gray-dark'>{{itm}}</view>  
+          </view>
+          <view class='search-detail-desc-title'>
+            <!-- 房屋级别标记 -->
+            <view class='search-detail-desc-title-level' wx:if="{{item.houseLevel}}">
+              <text wx:if="{{item.houseLevel!=0}}" class='daoke-icon {{levelList[item.houseLevel].url}}'></text>
+              <text class='font-small'>{{levelList[item.houseLevel].title}}</text>          
+            </view>
+            <view style='margin-left:{{!item.houseLevel ? 0 : "17%"}};' class='omit font-large'>{{item.introduction.minsu_name}}</view>
+          </view>
+          <view class='search-detail-desc-context font-middle color-153'>
+            <text wx:for="{{item.advantage}}" wx:for-item='it2' wx:key wx:for-index="id2">{{it2}} <text hidden='{{id2+1==item.advantage.length}}'>· </text></text>
+          </view>
+          <view class='search-detail-desc-youhui'>
+            <block  wx:for="{{item.activity}}" wx:for-item="item2" wx:key>
+              <text class='font-small text {{item2=="优选" ? "active" : ""}}'>{{item2}}</text>
+            </block>
+          </view>         
+          </view>
+      </view>
+    </block>
+    <view class='noMore font-small' wx:if="{{ houseList.length == total }}">
+      这里是最后一条啦~
+    </view>
+  </view>
+  <!-- 无房屋数据 -->
+  <view class='noData font-middle' wx:else>
+    暂时没有数据~
+  </view>
+</view>
+<view hidden="{{isHideLoadMore}}">
+  <zan-loadmore type="loading"></zan-loadmore>
+</view>
+<zan-toast id="zan-toast-test"></zan-toast>
+
+

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "zan-search": "/components/dist/search/index"
+  }
+}

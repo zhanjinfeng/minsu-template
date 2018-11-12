@@ -1,0 +1,63 @@
+
+
+.summary{padding:20rpx 20rpx; height: auto;overflow: hidden; background:#ffffff;}
+.summary_title{color:#333333;font-size:26rpx;}
+.summary_cont{padding:10rpx 400rpx 10rpx 0}
+.summary_conts{padding:10rpx 10rpx;font-size:26rpx;color:#ffffff;background:#000000}
+.summary_content{color:#868686;font-size:26rpx;}
+.summary_contents{color:#333333;padding:10rpx 0;}
+.summary_contents_butlayer{padding:70rpx 210rpx 20rpx;}
+.summary_contents_but{border:1rpx solid #cdcdcd;border-radius:5rpx;padding:10rpx;text-align:center;color:#333333;font-size:26rpx;}
+/*日历样式*/
+.summary_calendar{padding:30rpx 30rpx;background:#ffffff;margin-top:20rpx; height: auto; overflow: hidden;}
+.summary_calendartitle{padding:20rpx 0;font-size:24rpx;}
+.summary_calendarmain{padding:20rpx 0;height: 40rpx;line-height: 40rpx;}
+.summary_center{text-align:center}
+.summary_imgfl{text-align:left}
+.summary_imgfl image{width:30rpx;height:30rpx;}
+.summary_centertitle{text-align:center;}
+.summary_imgfr{text-align:right}
+.summary_imgfr image{width:30rpx;height:30rpx;}
+.calendar_number{padding:20rpx 0 20rpx 0;}
+.calendar_number_title{display:block; height: 60rpx; line-height: 60rpx; overflow: hidden; background:#fff;   width: 620rpx; margin: 0 auto;}
+.calendar_number_title view{float:left;width:88rpx;text-align:center;color:#999;font-size: 30rpx;}
+.number_title{display:block;height: auto; overflow: hidden; width: 620rpx; margin: 0 auto;}
+.number_title .day{float:left;width:88rpx; height:88rpx;  text-align:center;margin-top: 10rpx; color:#333333;position: relative;  margin:0; padding: 0;}
+.number_title .day .text{position: absolute;top: 0; left: 0; width:100%; height: 100%;z-index: 3; }
+.number_title .day .yuan{position: absolute;top: 0; left: 0; width:100%;height:100%;z-index:2;background: rgb(253,130,56); border-radius: 44rpx; opacity: 0.9; display: none;margin:0; padding: 0;}
+.number_title .day .left{position: absolute;top: 0; left: 0; width: 50%; height: 100%;z-index: 1; background: rgb(253,130,56); opacity: 0.6; display: none; margin:0; padding: 0;}
+.number_title .day .right{position: absolute;top: 0; right: 0; width: 50%; height: 100%;z-index: 1; background: rgb(253,130,56); opacity: 0.6; display: none; margin:0; padding: 0;}
+.number_title .disabled{ color: #ccc; }  
+.number_title .disabled .yuan{ display: none;}
+.number_title .disabled .left{ display: none;}
+.number_title .disabled .right{ display: none;}
+.number_title .select{ color: #ffffff;}
+.number_title .select .yuan{ display: none;}
+.number_title .select .left{ display: block;}
+.number_title .select .right{ display: block;}
+.number_title .lidian {color: #ffffff;}
+.number_title .lidian .yuan{ display: block;}
+.number_title .lidian .left{ display: block;}
+.number_title .lidian .right{ display: none;}
+.number_title .ruzhu{ color: #ffffff;}
+.number_title .ruzhu .yuan{ display: block;}
+.number_title .ruzhu .left{ display: none;}
+.number_title .ruzhu .right{ display: block;}
+.number_title .p{font-size:24rpx;}
+.ms_selectdate{position:fixed;bottom:0;left:0;background:#ffffff;height:16%;width:100%;z-index:9;border-top:1rpx solid #e6e6e6}
+.msyg_data_layer{padding:10rpx 0rpx;text-align:center;}
+.msygdata_color{color:#ff560b;font-size:24rpx;}
+.msygdata_title{font-size:24rpx;color:#868686;padding-top:10rpx;}
+.ms_selectdate_layer{padding:0rpx 30rpx;text-align:center;}
+.ms_selectdate_but{background:#ff8201;padding:18rpx 0rpx;color:#ffffff;font-size:24rpx;border-radius:5rpx;}
+
+.line44{
+  line-height: 44rpx;
+}
+.line88{
+  line-height: 88rpx;
+}
+
+.kongbai{
+  height: 200rpx;
+}

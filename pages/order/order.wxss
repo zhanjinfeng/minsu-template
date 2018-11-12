@@ -1,0 +1,114 @@
+/* pages/order/order.wxss */
+.order{
+  border-top: 20rpx solid rgb(244,244,244)
+}
+.order-num{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 40rpx 0 40rpx;
+  border-bottom: 2rpx solid rgb(244,244,244)
+}
+.cancle{
+  font-weight: bold;
+  float: right;
+}
+.order-info{
+  line-height: 50rpx;
+  padding: 20rpx 40rpx;
+}
+.date{
+  color: #ccc;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid rgb(244,244,244)
+}
+.order-cost{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 40rpx;
+  border-bottom: 2rpx solid rgb(244,244,244);
+  padding-top: 0;
+}
+.price{
+  width: 30%;
+}
+.price-title{
+  margin-right:19rpx;
+}
+.date text:first-child{
+  margin-right: 40rpx;
+}
+.pay{
+  width: 140rpx;
+  background-color: #FD8238;
+  color: #fff;
+  text-align: center;
+  border:1px solid #FD8238;
+  padding:10rpx 0;
+  height:35rpx;
+  border-radius:20rpx;
+  line-height: 35rpx;
+  margin-left: 20rpx;
+}
+.order-null{
+  margin: 300rpx 0 0 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.order-null image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.unlogin-icon{
+  padding-top: 200rpx;
+  padding-bottom: 50rpx;
+  display: flex;
+  justify-content: center;
+}
+.unlogin-tip{
+  text-align: center;
+} 
+.unlogin-btn{
+  padding:20rpx 0;
+  margin:0 40rpx;
+  background:#FD8238;
+  text-align:center;
+  color:#fff;
+  border-radius:10rpx;
+  margin-top:150rpx;
+}
+.icon-unlogin{
+  font-size: 200rpx;
+}
+.null-icon{
+  font-size: 200rpx;
+}
+.cancleOrder{
+  text-align: center;
+  width: 140rpx;
+  border:1px solid #FD8238;
+  padding:10rpx 0;
+  height:35rpx;
+  border-radius:20rpx;
+  line-height: 35rpx;
+  margin-left: 20rpx;
+}
+.cost-btn{
+  display: flex;
+  align-items:center;
+}
+.loadmore{
+  padding: 20rpx 0;
+  background: rgb(242,242,242);
+}
+.noMore{
+  padding-top: 20rpx;
+  line-height: 1.6em;
+  text-align: center;
+  color: #ccc;
+  background-color: rgb(244,244,244);
+}
+.btn-click{
+  background: rgb(255, 185, 142);
+}

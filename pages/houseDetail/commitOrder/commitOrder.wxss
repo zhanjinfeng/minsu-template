@@ -1,0 +1,171 @@
+/* pages/houseDetail/commitOrder/commitOrder.wxss */
+.image{
+  height: 180rpx;
+  text-align: center;
+  line-height: 180rpx;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position:center center;
+  background-size: cover;
+}
+.info{
+  padding: 60rpx 30rpx 30rpx 30rpx;
+  line-height: 40rpx;
+  border-bottom: 20rpx solid rgb(247,249,251)
+}
+.lidian{
+  margin: 0 30rpx;
+}
+.form{
+  border-bottom: 20rpx solid rgb(247,249,251)
+}
+.housenum{
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.housenum-text{
+  width: 59%;
+  line-height: 70rpx;
+}
+.peoplenum{
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  border-top: 2rpx solid rgb(244,244,244)
+}
+.zhengjian{
+  padding: 20rpx 30rpx;
+  display: flex;
+  border-top: 2rpx solid rgb(244,244,244)
+}
+.zhengjian input{
+  width: 100%;
+}
+.zhengjian-left{
+  width: 33%;
+  line-height: 50rpx
+}
+.xuzhi{
+  padding: 20rpx 30rpx;
+  display: flex;
+}
+.xuzhi image{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 5rpx 10rpx 5rpx 0;
+
+}
+.picker{
+  display: flex
+}
+.sanjiaoxing{
+  margin: 20rpx 0 0 10rpx;
+  width: 0;
+  height: 0;
+  border-width: 10rpx;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent
+}
+.baoxian{
+  padding: 20rpx 30rpx;
+  display: flex;
+  border-bottom: 20rpx solid rgb(247,249,251)
+}
+.baoxian-left{
+  width: 85%;
+  line-height: 45rpx;
+}
+.baoxian-right{
+  line-height: 90rpx
+}
+.baoxian-right image{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 15rpx;
+}
+.totalcost{
+  padding: 20rpx 30rpx;
+  border-bottom: 20rpx solid rgb(247,249,251);
+  display: flex;
+}
+.price{
+  margin: 0 10rpx 0 20rpx
+}
+.cost{
+  text-decoration: underline
+}
+.pay{
+  padding: 10rpx 30rpx;
+  line-height: 70rpx;
+}
+.pay-yajin{
+  border-top: 2rpx solid rgb(244,244,244)
+}
+.right{
+  float: right
+}
+
+.other{
+  background-color: rgb(247,249,251);
+  padding: 30rpx 30rpx 120rpx 30rpx;
+}
+.item{
+  margin-bottom: 20rpx;
+  display: flex
+}
+.other image{
+  width: 15rpx;
+  height: 15rpx;
+  margin-right: 30rpx
+}
+.foot{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  background-color: #fff;
+  z-index: 1000
+}
+.foot-left{
+  width: 30%;
+  padding: 20rpx 30rpx;
+}
+.foot-right{
+  width: 70%;
+  text-align: center;
+  line-height: 120rpx;
+  background-color: rgb(253,130,56);
+  color: #fff;
+}
+.popup{
+  background-color: #fff;
+  padding: 40rpx 30rpx 0 30rpx;
+  width: 600rpx;
+}
+.popup-confirm{
+  text-align: center;
+  border-top: 2rpx solid rgb(244,244,244);
+  color: rgb(60, 197, 31);
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 40rpx;
+}
+.xuzhi-icon{
+  font-size:25rpx;
+  margin-right:10rpx;
+}
+.baoxian-icon{
+  font-size: 20rpx;
+  margin-left: 10rpx;
+}
+.prompt-icon{
+  font-size: 20rpx;
+}
+.active{
+  background: rgb(255, 185, 142);
+}
+.btn-click{
+  background: rgb(255, 185, 142);
+}

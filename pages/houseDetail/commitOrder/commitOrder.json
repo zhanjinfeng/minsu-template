@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "填写订单",
+  "usingComponents": {
+    "zan-field": "/components/dist/field/index",
+    "stepper": "/components/stepper2/index",
+    "zan-popup": "/components/dist/popup/index",
+    "zan-toast": "/components/dist/toast/index"
+  }
+}
