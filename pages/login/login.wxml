@@ -16,7 +16,7 @@
         <text class='font-middle color-org'>授权手机号登录</text>
       </button>
     </view>
-    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为稻客民宿用户*</view>
+    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为民宿用户*</view>
   </view>
   <!-- 验证码登录 -->
   <view class='codeLogin font-middle' wx:else>
@@ -32,6 +32,6 @@
       <zan-button disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode" size='code' type="org">{{time}}</zan-button>
     </view>  
     <view class='btn-login' style="color: {{ isFinished?'#fff':'' }}" bindtap="{{ isFinished?'login':'' }}" hover-class='{{ isFinished?"btn-click":""}}'>登录</view>
-    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为稻客民宿用户*</view>
+    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为民宿用户*</view>
   </view>
 </view>

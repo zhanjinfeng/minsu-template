@@ -28,7 +28,6 @@
     "pages/profile/coupon/receiveCoupon/receiveCoupon",
     "pages/profile/coupon/couponDetail/couponDetail",
     "pages/profile/coupon/couponDetail/detail/detail"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -58,5 +57,6 @@
       }
     ],
     "selectedColor": "#FD8238"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

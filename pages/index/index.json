@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "稻客民宿小程序",
+  "navigationBarTitleText": "民宿小程序",
   "usingComponents": {
     "zan-row": "/components/dist/row/index",
     "zan-col": "/components/dist/col/index"

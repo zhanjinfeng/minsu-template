@@ -49,7 +49,7 @@ Page({
     }
     wx.showModal({
       title: '提示',
-      content: '拨打稻客客服：'+p,
+      content: '拨打客服：'+p,
       confirmColor: "#FD8238",
       success(res) {
         if(res.confirm){

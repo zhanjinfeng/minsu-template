@@ -37,7 +37,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     //请求一张首页的背景图片
-    that.get_bgImg();
+    //that.get_bgImg();
     var bg_date = month + '月' + date + '日';
     var end_date = utils.getDateStr(starttime, 1).slice(5, 7) + '月' + utils.getDateStr(starttime, 1).slice(8, 10) + '日';
     that.setData({
@@ -71,7 +71,7 @@ Page({
       })
     }
     that.getPlace();
-    wxb.getCityList(function (data) {
+    /*wxb.getCityList(function (data) {
       if(data != '')
         wxb.dingWei(data, function (data2) {
           that.setData({
@@ -79,7 +79,7 @@ Page({
           });       
           wxb.setCity(data2.city_id, data2.city_name, data2.city_lat, data2.city_lng);
         });
-    })
+    })*/
   },
   onShow: function () {
     var that = this;
@@ -150,7 +150,7 @@ Page({
   //获取定位城市信息
   getPlace(){
     var that = this;
-    wx.getLocation({
+    /*wx.getLocation({
       success: function (res) {
         var l = res.latitude + ',' + res.longitude;
         wxb.Post(wxb.api.getLocation, { location: l} ,function(data){
@@ -165,7 +165,7 @@ Page({
           wxb.setCity(data.result.cityCode, data.result.addressComponent.city, data.result.location.lat, data.result.location.lng);
         });
       }
-    });
+    });*/
 
   },
   // 获取定位具体位置
